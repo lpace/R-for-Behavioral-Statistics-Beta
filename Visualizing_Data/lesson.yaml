@@ -1,0 +1,28 @@
+- Class: meta
+  Course: statistics_courses
+  Lesson: Visualizing Data
+  Author: Larry Pace
+  Type: Standard
+  Organization: Keiser University
+  Version: 2.2.21
+
+- Class: text
+  Output: Hi again! Dr. Larry here. Our lesson today is the visualization of data. We are going to be working with the same dataset as before, the car data, but this time with more than one variable, so we will keep the data frame and access individual variables as we need them.
+
+- Class: text
+  Output: We will link our data visualization tasks with the descriptive statistics we did in our previous lesson. The combination of numerical and graphic summaries of data is called exploratory data analysis. Recall the summary function you learned in the descriptive statistics lesson. The summary adds the mean to what is known as the five-number summary of a dataset, namely, the minimum, the first quartile, the median, the third quartile, and the maximum. A graphical representation of the five-number summary is the boxplot.
+
+- Class: cmd_question
+  Output: To use the city mpg variable, we can use the data$variable notation. Let's remind ourselves of the summary of the variable. Type summary(cars$mpgCity) and press Enter.
+  CorrectAnswer: summary(cars$mpgCity)
+  AnswerTests: omnitest(correctExpr= 'summary(cars$mpgCity)')
+  Hint: Type summary(cars$mpgCity) and press Enter.
+
+- Class: cmd_question
+  Output: You may remember that the city miles per gallon variable was positively skewed and that there were some extreme positive values. A boxplot is a good way to visualize this. At the command prompt, type boxplot(cars$mpgCity) and press Enter.
+  CorrectAnswer: boxplot(cars$mpgCity)
+  AnswerTests: omnitest(correctExpr= 'boxplot(cars$mpgCity)')
+  Hint: Type boxplot(cars$mpgCity) and press Enter.
+
+- Class: text
+  Output:The box in the boxplot is drawn from the first quartile to the third quartile, and the median is shown as a darker line in the box. The whiskers extend downward from the first quartile and upward from the third quartile. The interquartile range (IQR) is the distance between the third and first quartiles, and it contains the middle 50% of the data. The circles represent outliers, values that are farther than 3/2 of the IQR from the first or third quartile. The fact that the upper whisker is longer than the lower whisker indicates that this is a skewed distribution, as we saw in our previous lesson. 

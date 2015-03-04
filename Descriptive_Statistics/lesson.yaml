@@ -1,0 +1,189 @@
+- Class: meta
+  Course: Getting Started
+  Lesson: Descriptive Statistics
+  Author: your name goes here
+  Type: Standard
+  Organization: your organization's name goes here
+  Version: 2.2.21
+
+- Class: text
+  Output: In this lesson, you will learn how to use R to find measures of central tendency and variability. Central tendency is the quest for a single number that somehow represents the entire dataset. The three common measures of central tendency are the mean, the median, and the mode. Each of these will be most appropriate in different situations and for different data types. Technically, we should calculate the mean only for "scale" data (interval and ratio), though in some nonparametric tests we average ranks. The mode is the only appropriate measure of central tendency for nominal (frequency) data. We can determine the median for scale data and ordinal data.
+
+- Class: text
+  Output: Similarly, we have different measures of variability, including the range, the variance, and the standard deviation. Variability describes how much "scatter" or "spread" there is in a dataset. Some datasets have values bunched close together (low variability) while others have values spread far apart from each other (high variability).
+
+- Class: cmd_question
+  Output: You learned about data frames in the previous lesson. There is already a data frame named cars in your current workspace. The head() function in R is very useful to take a quick peek at a data set. Type head(cars) and press Enter to see the the first few rows of the data.
+  CorrectAnswer: head(cars)
+  AnswerTests: omnitest(correctExpr = 'head(cars)')
+  Hint: Type cars and press Enter.
+
+- Class: cmd_question
+  Output: You also remember by now that the str() function is helpful to tell you about the structure of an R object. Type str(cars) to see what you can learn about the data frame.
+  CorrectAnswer: str(cars)
+  AnswerTests: omnitest(correctExpr= 'str(cars)')
+  Hint: Type str(cars) and press Enter.
+
+- Class: text
+  Output: For each of 54 individual cars, we have the type (size), the price in thousands of U.S. dollars, the miles per gallon obtained in the city, the type of drive train (front, rear or 4WD), the number of passengers the car will carry, and the weight of the car in pounds. Note that the type of car and the drive train are factors, while the other data are numerical.
+
+- Class: cmd_question
+  Output: In this lesson, we will work exclusively with the city miles per gallon variable. Let's create a new variable for just the city mpg. At the command prompt, type myMPG <- cars$mpgCity and press Enter.
+  CorrectAnswer: myMPG <- cars$mpgCity
+  AnswerTests: omnitest(correctExpr = 'myMPG <- cars$mpgCity')
+  Hint: Type myMPG <- cars$mpgCity and press Enter.
+
+- Class: cmd_question
+  Output: Now you have a vector with just the city miles per gallon in it. As you will recall, the mean or arithmetic average is the sum of the values in a dataset divided by the number of values. R's mean() function will return this value instantly. At the command prompt, type mean(myMPG) and press Enter.
+  CorrectAnswer: mean(myMPG)
+  AnswerTests: omnitest(correctExpr = 'mean(myMPG)')
+  Hint: Type mean(myMPG) and press Enter.
+  
+- Class: text
+  Output: The mean is the "center of gravity" of the dataset. If you were to subtract the mean from every value in the dataset to get what are called deviation scores, the sum and average of these deviation scores would be zero. The positive and negative deviations balance each other out. From a statistical standpoint, the mean is the most useful measure of central tendency because it is used in the calculation of other statistics like the variance and standard deviation.
+
+- Class: text
+  Output: One difficulty with the mean is that it is "pulled" in the direction of extreme values. In this sense, the mean is not robust. Another measure of central tendency, the median, is robust. It is not affected by extreme values the way the mean is. The built-in R function for the median is median(), as you might have guessed! The median is defined as the midpoint or 50th percentile of a dataset. Half the values are above the median, and half the values are below it. We can always locate the median by sorting the data from smallest to largest and then looking for the value in the position (n + 1)/2 in the ordered dataset. If there are an odd number of values in the dataset, the median will be the middle value in the ordered datatset. If there are an even number of values, the median is defined as the mean of the two middle values. 
+
+- Class: cmd_question
+  Output: To see the median of the myMPG variable, type median(myMPG) and press Enter.
+  CorrectAnswer: median(myMPG)
+  AnswerTests: omnitest(correctExpr = 'median(myMPG)')
+  Hint: Type median(myMPG) and press Enter.
+
+- Class: cmd_question
+  Output: Did you note that the mean is larger than the median? The mean is 23.31, and the median is 21. Remember the median is the midpoint of the dataset, dividing it into halves. When the mean is greater than the median, the dataset is not symmetrical. The shape of the distribution of the data will be right-skewed. You can examine the shape of the dataset by using a histogram. At the command prompt, type hist(myMPG) and press Enter.
+  CorrectAnswer: hist(myMPG)
+  AnswerTests: omnitest(correctExpr = 'hist(myMPG)')
+  Hint: Type hist(myMPG) and press Enter.
+
+- Class: cmd_question
+  Output: The histogram shows that the data are stacked up on the left side and taper off on the right side. The extreme values on the right affect the mean, pulling it rightward. We will come back to this issue later, when we discuss skewness in more depth. For now, let's look at one last measure of central tendency, the mode. The mode is the most frequently occuring value in a dataset. A given dataset may have no mode, one mode, or multiple modes. The built-in R function mode() does not return the modal value of the dataset. Instead, it gives you the storage class of the object. At the command prompt, type mode(myMPG) and press Enter.
+  CorrectAnswer: mode(myMPG)
+  AnswerTests: omnitest(correctExpr = 'mode(myMPG)')
+  Hint: Type mode(myMPG) and press Enter.
+
+- Class: cmd_question
+  Output: As you see, the data are stored in a numeric vector. That is useful information, of course. Although there is not a function for the mode or modes built into the base version of R, you can use the table function to identify the mode or modes of a dataset. At the command prompt, type table(myMPG) and press Enter.
+  CorrectAnswer: table(myMPG)
+  AnswerTests: omnitest(correctExpr= 'table(myMPG)')
+  Hint: Type table(myMPG) and press Enter.
+
+- Class: text
+  Output: The table makes it clear that 19 is the mode. The order of the mode, median, and mean will tell us about the shape of the distribution. When the mode, median, and mean are very close to each other, the dataset is symmetrical in shape, having a mirror-image quality. When the three values differ widely, the dataset is asymmetrical, as we saw earlier.
+
+- Class: cmd_question
+  Output: Most statistical software packages will report the mode of a dataset. I loaded the prettyR package for you at the beginning of the lesson. This package, among many other things, will find the mode if there is one. At the command prompt, type Mode(myMPG). Note the capital M.
+  CorrectAnswer: Mode(myMPG)
+  AnswerTests: omnitest(correctExpr = 'Mode(myMPG)')
+  Hint: Type Mode(myMPG) and press Enter.
+
+- Class: text
+  Output: The prettyR package found the same value for the mode as we found with the table function. Sometimes, as I mentioned, data may have more than one mode. If that is the case, prettyR's Mode function will tell us there are multiple modes, but will not reveal their values. For that reason, you may decide to stick with the table function, as it will allow you to identify the values of multiple modes.
+
+- Class: text
+  Output: Three common measures of variability, or spread, are the range, the variance, and the standard deviation. The range is simply the difference between the largest and smallest values in the dataset. It is helpful, but because it is based on only two values, the range provides little additional information. Remember when I said earlier that the deviations from the mean would sum to zero, and thus have an average of zero as well? That means the average deviation will not tell us anything about the spread or variability of the dataset. When we square the deviations, the negative deviations produce positive squared deviations, and if we simply add up all the squared deviations and divide the sum by N for a population or by (n - 1) for a sample, we have the variance, essentially the average squared deviation from the mean.
+
+- Class: text
+  Output: The variance function in R reports the sample variance, using the (n - 1) correction. If you want to estimate the population variance, you will have to adjust the value. If you remember your algebra, if you were to multiply the sample variance by (n - 1)/N, you would have the population estimate.
+
+- Class: cmd_question
+  Output: The range() function in R will report the lowest and highest values in a dataset. Type range(myMPG) and press Enter.
+  CorrectAnswer: range(myMPG)
+  AnswerTests: omnitest(correctExpr = 'range(myMPG)')
+  Hint: Type range(myMPG) and press Enter.
+
+- Class: cmd_question
+  Output: If you want the actual range, you can subtract the minimum value from the maximum value. Type max(myMPG) - min(myMPG) and press Enter.
+  CorrectAnswer: max(myMPG) - min(myMPG)
+  AnswerTests: omnitest(correctExpr = 'max(myMPG) - min(myMPG)')
+  Hint: type max(myMPG) - min(myMPG) and press Enter.
+
+- Class: text
+  Output: In contrast to the range, the variance, because it is based on deviations from the mean, includes information from every observation in the dataset. If the variance is large, the dataset has high scattter or spread, meaning the data points are located both near the mean and far from the mean. If the variance is small, the dataset has low scatter, meaning the data points are all relatively close to the mean. In R, the function for variance is var(). As I mentioned, this function calculates the variance treating the data as a sample. Let's figure out what the variance is before using the function, working from the conceptual definition of the sample variance, which is the sum of the squared deviations divided by (n - 1).
+
+- Class: cmd_question
+  Output: Though you would normally not do it this way, let us calculate the sum of the squared deviations from the mean, a statstical term we abbreviate as SS. At the command prompt, type SS <- sum((myMPG - mean(myMPG))^2) and press Enter. Make sure to get the parentheses in the right places!
+  CorrectAnswer: SS <- sum((myMPG - mean(myMPG))^2)
+  AnswerTests: omnitest(correctExpr = 'SS <- sum((myMPG - mean(myMPG))^2)')
+  Hint: Type SS <- sum((myMPG - mean(myMPG))^2) and press Enter.
+
+- Class: text
+  Output: The sum of the squared deviations from the mean is something you will run into over and over again in statistics. When you divide the sum of squares by n - 1, you get the sample variance.
+
+- Class: cmd_question
+  Output: Go ahead and calculate the variance using the following formula. Type SS / (length(myMPG) - 1) and press Enter.
+  CorrectAnswer: SS / (length(myMPG) - 1)
+  AnswerTests: omnitest(correctExpr = 'SS / (length(myMPG) - 1)')
+  Hint: Type SS / (length(myMPG) - 1) and press Enter
+
+- Class: cmd_question
+  Output: Now, let's make sure our calculuations produced the same value as the built-in R function. At the command prompt, type var(myMPG) and press Enter.
+  CorrectAnswer: var(myMPG)
+  AnswerTests: omnitest(correctExpr = 'var(myMPG)')
+  Hint: Type var(myMPG) and press Enter.
+
+- Class: text
+  Output: I worked out this example just to show you that there is no magic in R or any other statistical program. R and other statistical software programs use the same formulas you will find in any statistics textbook. The computer simply does the calculations more quickly and more accurately than you can do by hand, especially if there are many observations.
+
+- Class: text
+  Output: The variance is expressed in squared terms, because we squared the deviations from the mean. By taking the square root of the variance, we return our measure of variability to the original measurement units. The square root of the variance is known as the standard deviation. In R, the function for the standard deviation is sd().
+
+- Class: cmd_question
+  Output: At the command prompt, type sd(myMPG) and press Enter.
+  CorrectAnswer: sd(myMPG)
+  AnswerTests: omnitest(correctExpr = 'sd(myMPG)')
+  Hint: Type sd(myMPG) and press Enter.
+
+- Class: text
+  Output: We can use the standard deviation in many ways, including the calculation of standardized, or z-scores. The sample variance is an unbiased estimate of the population variance. While the sample standard deviation is not exactly an unbiased estimate of the population standard deviation, it is "close enough" for most purposes. We will use the standard deviation(s) of one or more variables in many hypothesis tests, as you will soon learn.
+
+- Class: text
+  Output: Time for a little review and a short quiz. There are three common measures of central tendency, the mean, the median, and the mode.
+
+- Class: mult_question
+  Output: Which measure of central tendency is the "center of gravity" of a dataset?
+  AnswerChoices: the mean;the median;the mode
+  CorrectAnswer: the mean
+  AnswerTests: omnitest(correctVal= 'the mean')
+  Hint: Remember which measure produces deviations that sum to zero.
+
+- Class: mult_question
+  Output: Which measure of central tendency divides a dataset into an upper half and a lower half?
+  AnswerChoices: the median; the mean; the mode
+  CorrectAnswer: the median
+  AnswerTests: omnitest(correctVal= 'the median')
+  Hint: Remember which measure is the midpoint of the dataset.
+
+- Class: mult_question
+  Output: Which measure of central tendency does not have a built-in function in the base version of R?
+  AnswerChoices: the mode; the mean; the median
+  CorrectAnswer: the mode
+  AnswerTests: omnitest(correctVal= 'the mode')
+  Hint: Remember which built-in function returns the storage class of an R object.
+
+- Class: text
+  Output: We looked at three measures of variability, the range, the variance, and the standard deviation.
+
+- Class: mult_question
+  Output: Which of the measures of variability is based on only two data points?
+  AnswerChoices: the range; the variance; the standard deviation
+  CorrectAnswer: the range
+  AnswerTests: omnitest(correctVal = 'the range')
+  Hint: The variance and the standard deviation are based on all the data points in the dataset.
+  
+- Class: mult_question
+  Output: Which measure of variability is expressed in squared terms?
+  AnswerChoices: the variance; the range; the standard deviation
+  CorrectAnswer: the variance
+  AnswerTests: omnitest(correctVal = 'the variance')
+  Hint: Remember that deviations are squared and averaged in one of the measures of variability.
+  
+- Class: cmd_question
+  Output: Now that we have worked through some basic descriptive statistics, I would like to make you aware of a built-in function in R called summary(). For a numeric variable, this function will return a six-number summary, including the minimum, the first quartile, the median, the mean, the third quartile, and the maximum. This is a good way to look at both the center and the spread of the data. At the command prompt, type summary(myMPG) and press Enter.
+  CorrectAnswer: summary(myMPG)
+  AnswerTests: omnitest(correctExpr= 'summary(myMPG)')
+  Hint: Type summary(myMPG) and press Enter.
+  
+- Class: text
+  Output: Congratulations! You have finished the module on descriptive statistics.
