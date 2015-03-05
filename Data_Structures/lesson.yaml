@@ -7,4 +7,36 @@
   Version: 2.2.21
   
 - Class: text
-  Output: Hi again, Dr. Larry here. Today, we are going to learn about different R data structures. You have already learned about vectors. In this lesson, you will learn about other data structures including matrices, lists, and data frames. A matrix is a vector with dimensions. Unlike vectors, lists can contain multiple data types, as you will learn. The data frame is the most common way to represent data. Like a matrix, a data frame is rectangular, and like a list, a data frame can contain multiple data types. The data frame is a type of list, as you will find.
+  Output: Hi again, Dr. Larry here. Today, we are going to learn about different R data structures. You have already learned something about vectors. In this lesson, you will learn about other data structures including matrices, lists, and data frames. A matrix is a vector with dimensions. Unlike vectors, lists can contain multiple data types, as you will learn. The data frame is the most common way to represent data. Like a matrix, a data frame is rectangular, and like a list, a data frame can contain multiple data types. The data frame is a type of list, as you will find.
+
+- Class: text
+  Output: In the world of R, a matrix is a vector with dimensions, but it is still a vector. On the other hand, a vector is not a one-dimensional matrix. It is possible to make a one-dimensional matrix if you need one. To show the difference, let's create a vector of the integers from 1 to 50.
+
+- Class: cmd_question
+  Output: "At the command prompt, type x <- 1:50 and press Enter."
+  CorrectAnswer: x <- 1:50
+  AnswerTests: omnitest(correctExpr='x <- 1:50')
+  Hint: Type x <- 1:50 and press Enter.
+
+- Class: text
+  Output: Now, let's create a matrix called y with 10 rows and 5 columns. We will populate the matrix with the values of x.
+
+- Class: cmd_question
+  Output: At the command prompt, type y <- matrix(x, nrow = 10, ncol = 5) and press Enter.
+  CorrectAnswer: y <- matrix(x, nrow = 10, ncol = 5)
+  AnswerTests: omnitest(correctExpr= 'y <- matrix(x, nrow = 10, ncol = 5)')
+  Hint: Type y <- matrix(x, nrow = 10, ncol = 5) and press Enter.
+
+- Class: cmd_question
+  Output: Now, examine y by typing y and pressing Enter.
+  CorrectAnswer: y
+  AnswerTests: omnitest(correctExpr= 'y')
+  Hint: Type y and press Enter.
+
+- class: cmd_question
+  Output: We clearly have a matrix here. Note that because a matrix is the special case of a two-dimensional array, we have two indexes for each element of the matrix. The default is to fill a matrix by columns, as your examination of y shows. Check the dimensions of y by typing dim(y) and pressing Enter.
+  CorrectAnswer: dim(y)
+  AnswerTests: omnitest(correctExpr = 'dim(y)')
+  Hint: Type dim(y) and press Enter.
+
+
