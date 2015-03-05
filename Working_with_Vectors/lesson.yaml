@@ -25,4 +25,35 @@
   Hint: Type str(x) and press Enter.
 
 - Class: cmd_question
-  Output: Every element of a vector has an index, and we can use these indexes to add, replace, and remove vector elements. This works with both character and numeric vectors. 
+  Output: Every element of a vector has an index, and we can use these indexes to subset, add, replace, and remove vector elements. This works with both character and numeric vectors. For example, type x[1:5] to see the first five elements of x.
+  CorrectAnswer: x[1:5]
+  AnswerTests: omnitest(correctExpr = 'x[1:5]')
+  Hint: Type x[1:5] and press Enter.
+
+- Class: cmd_question
+  Output: "Let's create a character vector to go along with our vector of integers. We will use another R shortcut. R already knows the alphabet, and has the letters programmed into it. We can get the first 10 letters by simply asking for them. Let's create a vector called y with these 10 letters. At the command prompt, type y <- letters[1:10] and press Enter. Note the square brackets."
+  CorrectAnswer: y <- letters[1:10]
+  AnswerTests: omnitest(correctExpr = 'y <- letters[1:10]')
+  Hint: Type y <- letters[1:10] and press Enter.
+
+- Class: cmd_question
+  Output: As we did with x, let's look at the first five elements of y. Type y[1:5] and press Enter.
+  CorrectAnswer: y[1:5]
+  AnswerTests: omnitest(correctExpr = 'y[1:5]')
+  Hint: Type y[1:5] and press Enter.
+
+- Class: cmd_question
+  Output: Note that R encloses character strings and single characters in quotation marks. When you try to mix data types in a vector, R will coerce the data to a single type. For example, if you were to try to make a vector with numbers and characters, the entire vector would become a character vector. To see this, combine x and y by typing z <- c(x, y).
+  CorrectAnswer: z <- c(x, y)
+  AnswerTests: omnitest(correctExpr = 'z <- c(x, y)')
+  Hint: Type z <- c(x, y) and press Enter.
+
+- Class: cmd_question
+  Output: Check the structure of z by typing str(z) and pressing Enter.
+  CorrectAnswer: str(z)
+  AnswerTests: omnitest(correctExpr = 'str(z)')
+  Hint: Type str(z) and press Enter.
+
+- Class: cmd_question.
+
+
