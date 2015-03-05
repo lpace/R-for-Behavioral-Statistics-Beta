@@ -54,6 +54,46 @@
   AnswerTests: omnitest(correctExpr = 'str(z)')
   Hint: Type str(z) and press Enter.
 
-- Class: cmd_question.
+- Class: cmd_question
+  Output: Yes, z is a character vector, and the numbers are now represented as characters. It is important to remember that a vector can contain only one type of data. To remove an unwanted object from your workspace, use the rm() for remove function. Let's get rid of z, as we will not need it any longer. At the command prompt, type rm(z) and press Enter.
+  CorrectAnswer: rm(z)
+  AnswerTests: omnitest(correctExpr= 'rm(z)')
+  Hint: Type rm(z) and press Enter.
+
+- Class: cmd_question
+  Output: Let's use indexes with our numeric vector. For example, we can substitute or replace a value by using the index. Remember x is a the vector of integers from 1 to 10, so the indexes match the values in this contrived example. Say we want to replace x[5] with the value NA, which is used to indicate missing data in R. Type x[5] <- NA and press Enter.
+  CorrectAnswer: x[5] <- NA
+  AnswerTests: omnitest(correctExpr='x[5] <- NA')
+  Hint: Type x[5] <- NA and press Enter.
+
+- Class: cmd_question
+  Output: Now, let's examine x again. Type x and press Enter.
+  CorrectAnswer: x
+  AnswerTests: omnitest(correctExpr='x')
+  Hint: Type x and press Enter.
+
+- Class: text
+  Output: NA is a special character in R, and it is the only code recognized by R for missing data. If you are working with data from another application that uses some other way to code missing data, you will need to recode the missing values to NA, either in that other application, or in R, in order to be able to use the data in R. We will discuss this matter in more depth in our upcomining lesson on subsetting and recoding data.
+
+- Class: cmd_question
+  Output: For now, let's reassign the correct value to x[5]. Type x[5] <- 5 and press Enter.
+  CorrectAnswer: x[5] <- 5
+  AnswerTests: omnitest(correctExpr= 'x[5] <- 5')
+  Hint: Type x[5] <- 5 and press Enter.
+
+- Class: text
+  Output: In addition to indexes, vector elements can also have names. To see this in operation, we will use our vector of letters as names for our vector of numbers.
+
+- Class: cmd_question
+  Output: At the command prompt, type names(x) <- y and then press Enter.
+  CorrectAnswer: names(x) <- y
+  AnswerTests: omnitest(correctExpr='names(x) <- y')
+  Hint: Type names(x) <- y and press Enter.
+
+- Class: cmd_question
+  Output: Now, check the contents of x again. Type x and press Enter.
+  CorrectAnswer: x
+  AnswerTests: omnitest(correctExpr = 'x')
+  Hint: Type x and press Enter.
 
 
