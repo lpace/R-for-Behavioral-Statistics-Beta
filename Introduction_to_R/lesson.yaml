@@ -25,13 +25,13 @@
   Output: If R does not understand what you are asking, it will give you an error message. Sometimes, R does what you have asked, but gives you one or more warnings that something may not be quite right.
 
 - Class: cmd_question
-  Output: To R, even a single number or character is a "vector." Other computer languages allow you to define a constant or scalar value, but R does not. To see what I mean, at the command prompt, type 2 + 2 and press Enter.
+  Output: To R, even a single number or character is a vector. Other computer languages allow you to define a constant or scalar value, but R does not. To see what I mean, at the command prompt, type 2 + 2 and press Enter.
   CorrectAnswer: 2 + 2
   AnswerTests: omnitest(correctExpr = '2 + 2')
   Hint: Type 2 + 2 and press Enter.
 
 - Class: text
-  Output: Note the [1] in front of the answer to your addition problem. It is an index telling you that to R, 4 is a vector of length 1. R makes use of "vectorization" in  ways that help with statistical computations. Vectorization also helps you avoid explicit loops in many cases.
+  Output: Note the [1] in front of the answer to your addition problem. It is an index telling you that to R, 4 is a vector of length 1. R makes use of vectorization in  ways that help with statistical computations. Vectorization also helps you avoid explicit loops in many cases.
 
 - Class: cmd_question
   Output: Let's create an object called x and assign the result of our addition to that object. The assignment operator in R is <-, the combination of a "less than" sign and a dash. Think of it as a leftward-pointing arrow. Whatever is on the right side is assigned to the "object" on the left side. At the command prompt, type x <- 2 + 2 and press Enter.
@@ -88,10 +88,10 @@
   Output: R follows the standard order of operations in evaluating mathematical expressions. The standard order is parentheses, exponentiation, multiplication, division, addition, and subtraction (PEMDAS). You can use parentheses to control the order in which operations are performed. 
 
 - Class: text
-  Output: R also provides many other mathematical and statistical functions. Many of these are built into the base version of R. Additional functions are available via add-on packages, which we will begin to illustrate in in our upcoming descriptive statistics module.
+  Output: R also provides many other mathematical and statistical functions. Many of these are built into the base version of R. Additional functions are available via add-on packages, which we will begin to illustrate in the upcoming descriptive statistics module.
 
 - Class: cmd_question
-  Output: You have just learned that you can do math in R. There are many other built-in functions in addition to mathematical and statistical functions. Some of these help you understand what is in your current R workspace (the R session you are "in") and in your current working directory (the directory in which your R session is running). To determine your current working directory, type getwd() and press Enter.
+  Output: You have just learned that you can do math in R. There are many other built-in functions in addition to mathematical and statistical functions. Some of these help you understand what is in your current R workspace (that is, your R session) and in your current working directory (the directory in which your R session is running). To determine your current working directory, type getwd() and press Enter.
   CorrectAnswer: getwd()
   AnswerTests: omnitest(correctExpr = 'getwd()')
   Hint: Type getwd() and press Enter.
@@ -118,7 +118,7 @@
   Output: You can mix variable names and numbers in your commands and expressions, but you must always remember that to R, a single number or a single character is still a vector of length 1. Vectorization is one of the key features of R.
 
 - Class: text
-  Output: R also has built-in functions that help you determine both the location of your working directory and its files, as well as the current R session and its associated objects. Ready? Here's a short quiz.
+  Output: R also has built-in functions that help you determine both the location of your working directory and its contents, as well as the current R session and its associated objects. Ready? Here's a short quiz.
 
 - Class: mult_question
   Output: In R, everything that exists is a(n) _________ of some sort.
