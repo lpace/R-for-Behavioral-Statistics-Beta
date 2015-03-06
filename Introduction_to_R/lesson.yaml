@@ -16,16 +16,16 @@
   Output: In R, everything is an object of some sort. We also work with functions in R. This makes R simultaneously object-oriented and functional. In this lesson, you will get a better feeling for R functions and objects and how they work. R is a programming language and statistical computing environment rolled into one. 
 
 - Class: text
-  Output: The most basic use of R is as an interactive calculator. In the R console, the command prompt is >. It is R's way of telling you it is ready for your instructions. You type a command or expression and then press the Enter key. R interprets your commands and attempts to do what you have asked. 
+  Output: The most basic use of R is as an interactive calculator. In the R console, the command prompt is >, a "greater than" sign. It is R's way of telling you it is ready for your instructions. You type a command or expression and then press the Enter key. R interprets your instructions and attempts to do what you have asked. 
 
 - Class: text 
-  Output: If R can do what you have told it to do, it will. Depending on what you have specifically instructed R to do, you may see output in the next line or lines of the console before you see another command prompt, or you may simply see another command prompt. If you have asked R to produce a graphical object, R will open a new window to display that object. 
+  Output: If R can do what you have told it to do, it will. Depending on what you have specifically instructed R to do, you may see output in the next line or lines of the console before you see another command prompt, or you may simply see another command prompt. If you have asked R to produce graphical output, R will open a new window to display that. 
 
 - Class: text
   Output: If R does not understand what you are asking, it will give you an error message. Sometimes, R does what you have asked, but gives you one or more warnings that something may not be quite right.
 
 - Class: cmd_question
-  Output: To R, even a single number or character is a "vector." Other languages allow you to define a constant or scalar value, but R does not. To see what I mean, at the command prompt, type 2 + 2 and press Enter.
+  Output: To R, even a single number or character is a "vector." Other computer languages allow you to define a constant or scalar value, but R does not. To see what I mean, at the command prompt, type 2 + 2 and press Enter.
   CorrectAnswer: 2 + 2
   AnswerTests: omnitest(correctExpr = '2 + 2')
   Hint: Type 2 + 2 and press Enter.
@@ -40,7 +40,7 @@
   Hint: Type x <- 2 + 2 and press Enter.
 
 - Class: text
-  Output: R is case sensitive, so as far as R is concerned, x and X are two different things. When you assign a value to an object, R does not automatically print your answer to the console, but you can see the contents of an R object by typing its name and pressing Enter.
+  Output: R is case sensitive, so as far as R is concerned, x and X are two different things. When you assign a value to an object, R does not automatically print your answer to the console, as we discussed above, but you can see the contents of any R object by typing its name and pressing Enter.
 
 - Class: cmd_question
   Output: At the command prompt, type x and press Enter.
@@ -49,13 +49,13 @@
   Hint: Type x and press Enter.
 
 - Class: cmd_question
-  Output: One of the functions you should learn in R is str(). It will tell you about the structure of an R object. For more complex objects, you will get more information than for simple objects. Type str(x) at the command prompt and press Enter.
+  Output: One of the R functions you should learn is str(). It will tell you about the structure of an R object. For more complex objects, you will get more information than for simple objects. Type str(x) at the command prompt and press Enter.
   CorrectAnswer: str(x)
   AnswerTests: omnitest(correctExpr= 'str(x)')
   Hint: Type str(x) and press Enter.
 
 - Class: cmd_question
-  Output: Correct. This tells us x is a numeric object with the value of 4. Like str(), the math operators in R are also functions themselves. These functions include addition, subtraction, multiplication, division, and exponentiation. Let's practice these functions with our named object x. You can mix variable names and numbers in your expressions. For example, at the command prompt, type x + 2 and press Enter.
+  Output: Correct. This tells us x is a numeric object with the value of 4. Like str(), the math operators in R are also functions themselves. These functions include addition, subtraction, multiplication, division, and exponentiation (along with very many others). Let's practice these functions with our named object x. You can mix variable names and numbers in your expressions. For example, at the command prompt, type x + 2 and press Enter.
   CorrectAnswer: x + 2
   AnswerTests: omnitest(correctExpr= 'x + 2')
   Hint: Type x + 2 and press Enter.
@@ -85,13 +85,13 @@
   Hint: Type x ^ 2 and press Enter.
 
 - Class: text
-  Output: R follows the standard order of operations in evaluating mathematical expressions. You can use parentheses to control the order in which operations are performed. 
+  Output: R follows the standard order of operations in evaluating mathematical expressions. The standard order is parentheses, exponentiation, multiplication, division, addition, and subtraction (PEMDAS). You can use parentheses to control the order in which operations are performed. 
 
 - Class: text
-  Output: R also provides many other mathematical and statistical functions. Many of these are built into the base version of R. Many other functions are available via add-on packages, which we will illustrate in in our descriptive statistics lesson.
+  Output: R also provides many other mathematical and statistical functions. Many of these are built into the base version of R. Additional functions are available via add-on packages, which we will begin to illustrate in in our upcoming descriptive statistics module.
 
 - Class: cmd_question
-  Output: You have just seen that you can do math in R. There are many other built-in functions in addition to mathematical and statistical functions. Some of these help you understand what is in your current R workspace (the session you are in) and in your current working directory (the directory in which you R session is running). To determine your current working directory, type getwd() and press Enter.
+  Output: You have just learned that you can do math in R. There are many other built-in functions in addition to mathematical and statistical functions. Some of these help you understand what is in your current R workspace (the R session you are "in") and in your current working directory (the directory in which your R session is running). To determine your current working directory, type getwd() and press Enter.
   CorrectAnswer: getwd()
   AnswerTests: omnitest(correctExpr = 'getwd()')
   Hint: Type getwd() and press Enter.
@@ -137,8 +137,14 @@
 - Class: mult_question
   Output: To R, even a single number or character is still a _________.
   AnswerChoices: vector; scalar; function; data point
-  AnswerTests: omnitest(correctVal = "vector")
+  AnswerTests: omnitest(correctVal = 'vector')
   Hint: Remember what the index [1] in front of the answer to your addition problem represented.
+
+- Class: mult_question
+  Output: To see the list of the objects in your current R session, you should type _______ and press Enter.
+  AnswerChoices: ls(); dir(); getwd(); setwd()
+  AnswerTests: omnitest(correctVal = 'ls()')
+  Hint: To list the objects in your current workspace, use ls().
 
 - Class: text
   Output: Congratulations! You have finished the introductory lesson. Now you know enough to move ahead into a more detailed lesson on working with vectors in R.
