@@ -1,2 +1,2 @@
 # R-for-Behavioral-Statistics-Beta
-Beta Test Courses for R for Behavioral Statistics
+Beta test for lessons by Dr. Larry Pace for using R for statistics in the social and behavioral sciences.
