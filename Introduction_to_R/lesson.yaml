@@ -88,7 +88,7 @@
   Output: R follows the standard order of operations in evaluating mathematical expressions. You can use parentheses to control the order in which operations are performed. 
 
 - Class: text
-  Output: R also provides many other mathematical and statistical functions. Many of these are built into the base version of R. Many other functions are avaialble via add-on packages, which we will illstrate in in our descriptive statistics lesson.
+  Output: R also provides many other mathematical and statistical functions. Many of these are built into the base version of R. Many other functions are available via add-on packages, which we will illustrate in in our descriptive statistics lesson.
 
 - Class: cmd_question
   Output: You have just seen that you can do math in R. There are many other built-in functions in addition to mathematical and statistical functions. Some of these help you understand what is in your current R workspace (the session you are in) and in your current working directory (the directory in which you R session is running). To determine your current working directory, type getwd() and press Enter.
