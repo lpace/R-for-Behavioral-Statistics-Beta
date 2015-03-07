@@ -96,4 +96,8 @@
   AnswerTests: omnitest(correctExpr = 'x')
   Hint: Type x and press Enter.
 
-
+- Class: cmd_question
+  Output: As you see, The names are attached to the elements of the vector. You can use either the name or the index to address the sprecific element now. For example type x["e"] and press Enter. 
+  CorrectAnswer: x["e"]
+  AnswerTests: omnitest(correctExpr='x["e"]')
+  Hint: Type x["e"] and press Enter.
