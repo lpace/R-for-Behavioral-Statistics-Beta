@@ -137,3 +137,30 @@
 
 - Class: text
   Output: See that R divided the first element of y by 5, the second element by 10, and repeated that pattern up to the 14th element. The last element, 75, was divided by 5, the first element of z. Because the longer vector was not a multiple of the length of the shorter vector, R gave us a warning, but it still did the calculation we asked it to do.
+
+- Class: cmd_question
+  Output: Let's go ahead and remove z, as we will not need it again. Type rm(z) and press Enter.
+  CorrectAnswer: rm(z)
+  AnswerTests: omnitest(correctExpr='rm(z)')
+  Hint: Type rm(z) and press Enter.
+
+- Class: cmd_question
+  Output: You saw in the introductory lesion that you can make logical comparisons in R. These can be applied to vectors, too. Let's sort the y vector to make this clearer. At the command prompt, type y <- sort(y) and press Enter. 
+  CorrectAnswer: y <- sort(y)
+  AnswerTests: omnitest(correctExpr='y <- sort(y)')
+  Hint: Type y <- sort(y) and press Enter.
+
+- Class: cmd_question
+  Output: Now, type y  and press Enter to see the newly assigned vector with the elements sorted in ascending order.
+  CorrectAnswer: y
+  AnswerTests: omnitest(correctExpr= 'y')
+  Hint: Type y and press Enter.
+
+- Class: cmd_question
+  Output: Now, the result of our logical comparison will be more obvious. Type y < 85 and press Enter.
+  CorrectAnswer: y < 85
+  AnswerTests: omnitest(correctExpr='y < 85')
+  Hint: Type y < 85 and press Enter.
+
+- Class: text
+  Output: As you see, R produces a logical vector, with one element for each comparison. The first seven elements of y are indeed less than 85, while the remaining elements are not. R's other logical operators are similarly vectorized, so they work in the same.
