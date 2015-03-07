@@ -73,7 +73,7 @@
   Hint: Type x and press Enter.
 
 - Class: text
-  Output: NA is a special character in R, and it is the only code recognized by R for missing data. If you are working with data from another application that uses some other way to code missing data, you will need to recode the missing values to NA, either in that other application, or in R, in order to be able to use the data in R. We will discuss this matter in more depth in our upcomining lesson on subsetting and recoding data.
+  Output: NA is a special character in R, and it is the only code recognized by R for missing data. If you are working with data from another application that uses some other way to code missing data, you will need to recode the missing values to NA, either in that other application, or in R, in order to be able to use the data in R. We will discuss this matter in more depth in our upcoming lesson on subsetting and recoding data.
 
 - Class: cmd_question
   Output: For now, let's reassign the correct value to x[5]. Type x[5] <- 5 and press Enter.
@@ -97,7 +97,43 @@
   Hint: Type x and press Enter.
 
 - Class: cmd_question
-  Output: As you see, The names are attached to the elements of the vector. You can use either the name or the index to address the sprecific element now. For example type x["e"] and press Enter. 
+  Output: As you see, The names are attached to the elements of the vector. You can use either the name or the index to address the specific element now. For example type x["e"] and press Enter. 
   CorrectAnswer: x["e"]
   AnswerTests: omnitest(correctExpr='x["e"]')
   Hint: Type x["e"] and press Enter.
+
+- Class: text
+  Output: Now you know about vectors, their elements, their indexes, and the ability to name elements. Let's examine vectorized operations in R in a little more detail.
+
+- Class: cmd_question
+  Output: Create a vector y with a series of quiz scores. Type y <- c(99, 100, 92, 91, 84, 71, 78, 97, 90, 98, 70, 81, 82, 85, 75)
+  CorrectAnswer: y <- c(99, 100, 92, 91, 84, 71, 78, 97, 90, 98, 70, 81, 82, 85, 75)
+  AnswerTests: omnitest(correctExpr = 'y <- c(99, 100, 92, 91, 84, 71, 78, 97, 90, 98, 70, 81, 82, 85, 75)')
+  Hint: Type y <- c(99, 100, 92, 91, 84, 71, 78, 97, 90, 98, 70, 81, 82, 85, 75) and press Enter.
+
+- Class: cmd_question
+  Output: The length() function will count the number of elements in the vector. Type length(y) and press Enter.
+  CorrectAnswer: length(y)
+  AnswerTests: omnitest(correctExpr='length(y)')
+  Hint: Type length(y) and press Enter.
+
+- Class: cmd_question
+  Output: When R performs operations on vectors of different lengths, it recycles the shorter vector repeatedly until it reaches the end of the longer vector. This is often exactly what we want. Say we decided to add 5 points to every quiz score as a grade adjustment. We could just type y + 5. Remember 5 is a vector, too, and 15 is a multiple of 1, the length of vector containing the number 5, so our calculations work without a hitch. Go ahead and type y + 5 and press Enter to see the result.
+  CorrectAnswer: y + 5
+  AnswerTests: omnitest(correctExpr = 'y + 5')
+  Hint: Type y + 5 and press Enter.
+
+- Class: cmd_question
+  Output: When the longer vector is not a multiple of the shorter vector, problems can occur. For example, 15 is not evenly divisible by 2, so if we create a vector with two elements, and perform an operation using our y vector and the new vector, we will wind up with an unused element in the second vector. Let's make a vector z with two element. Type z <- c(5, 10) and press Enter.
+  CorrectAnswer: z <- c(5, 10)
+  AnswerTests: omnitest(correctExpr='z <- c(5, 10)')
+  Hint: Type z <- c(5, 10) and press Enter.
+
+- Class: cmd_question
+  Output: Now, type y / z and press Enter.
+  CorrectAnswer: y / z
+  AnswerTests: omnitest(correctExpr='y / z')
+  Hint: Type y / z and press Enter.
+
+- Class: text
+  Output: See that R divided the first element of y by 5, the second element by 10, and repeated that pattern up to the 14th element. The last element, 75, was divided by 5, the first element of z. Because the longer vector was not a multiple of the length of the shorter vector, R gave us a warning, but it still did the calculation we asked it to do.
