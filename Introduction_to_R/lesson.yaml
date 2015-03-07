@@ -88,10 +88,38 @@
   Output: R follows the standard order of operations in evaluating mathematical expressions. The standard order is parentheses, exponentiation, multiplication, division, addition, and subtraction (PEMDAS). You can use parentheses to control the order in which operations are performed. 
 
 - Class: text
-  Output: R also provides many other mathematical and statistical functions. Many of these are built into the base version of R. Additional functions are available via add-on packages, which we will begin to illustrate in the upcoming descriptive statistics module.
+  Output: R also allows you to use the modulus operator and integer division. These may take a bit of explaining. The modulus operation for two numbers shows the remainder of the division of the number on the left by the number on the right, so if x is 10 and y is 3, x mod y is 1, the remainder. We use %% to represent modulus in R. Integer diviision shows us the integer result of the division without the remainder, and we use %/% to represent integer division. The result of x %/% y would be 3, the integer result.
 
 - Class: cmd_question
-  Output: You have just learned that you can do math in R. There are many other built-in functions in addition to mathematical and statistical functions. Some of these help you understand what is in your current R workspace (that is, your R session) and in your current working directory (the directory in which your R session is running). To determine your current working directory, type getwd() and press Enter.
+  Output: At the command prompt, type 17 %% 4 and press Enter.
+  CorrectAnswer: 17 %% 4
+  AnswerTests: omnitest(correctExpr = '17 %% 4')
+  Hint: Type 17 %% 4 and press Enter.
+
+- Class: cmd_question
+  Output: Now, type 17 %/% 4 and press Enter.
+  CorrectAnswer: 17 %/% 4
+  AnswerTests: omnitest(correctExpr = '17 %/% 4')
+  Hint: Type 17 %/% 4 and press Enter.
+
+- Class: text
+  Output: In addition to math, R allows you to perform logical comparisons. These include < for less than, <= for less than or equal to, > for greater than, >= for greater than or equal to, == for exactly equal to, and != for not equal to. When we perform such comparisons, R will return a logical TRUE or a logical FALSE for each comparison.
+
+- Class: cmd_question
+  Output: At the command prompt, type 8 < 10 and press Enter.
+  CorrectAnswer: 8 < 10
+  AnswerTests: omnitest(correctExpr = '8 < 10')
+  Hint: Type 8 < 10 and press Enter.
+
+- Class: cmd_question
+  Output: As another example, type 8 != 8 and press Enter.
+  CorrectAnswer: 8 != 8
+  AnswerTests: omnitest(correctExpr = '8 != 8')
+  Hint: Type 8 != 8
+
+
+- Class: cmd_question
+  Output: You have just learned that you can do math and logical comparisons in R. There are many other built-in functions in addition to mathematical and statistical functions. Some of these help you understand what is in your current R workspace (that is, your R session) and in your current working directory (the directory in which your R session is running). To determine your current working directory, type getwd() and press Enter.
   CorrectAnswer: getwd()
   AnswerTests: omnitest(correctExpr = 'getwd()')
   Hint: Type getwd() and press Enter.
