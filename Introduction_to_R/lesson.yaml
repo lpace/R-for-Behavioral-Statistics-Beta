@@ -18,7 +18,7 @@
 - Class: text
   Output: The most basic use of R is as an interactive calculator. In the R console, the command prompt is >, a "greater than" sign. It is R's way of telling you it is ready for your instructions. You type a command or expression and then press the Enter key. R interprets your instructions and attempts to do what you have asked. 
 
-- Class: text 
+- Class: text
   Output: If R can do what you have told it to do, it will. Depending on what you have specifically instructed R to do, you may see output in the next line or lines of the console before you see another command prompt, or you may simply see another command prompt. If you have asked R to produce graphical output, R will open a new window to display that. 
 
 - Class: text
@@ -88,7 +88,7 @@
   Output: R follows the standard order of operations in evaluating mathematical expressions. The standard order is parentheses, exponentiation, multiplication, division, addition, and subtraction (PEMDAS). You can use parentheses to control the order in which operations are performed. 
 
 - Class: text
-  Output: R also allows you to use the modulus operator and integer division. These may take a bit of explaining. The modulus operation for two numbers shows the remainder of the division of the number on the left by the number on the right, so if x is 10 and y is 3, x mod y is 1, the remainder. We use %% to represent modulus in R. Integer diviision shows us the integer result of the division without the remainder, and we use %/% to represent integer division. The result of x %/% y would be 3, the integer result.
+  Output: R also allows you to use the modulus operator and integer division. These may take a bit of explaining. The modulus operation for two numbers shows the remainder of the division of the number on the left by the number on the right, so if x is 10 and y is 3, x mod y is 1, the remainder. We use %% to represent modulus in R. Integer division shows us the integer result of the division without the remainder, and we use %/% to represent integer division. The result of x %/% y would be 3, the integer result.
 
 - Class: cmd_question
   Output: At the command prompt, type 17 %% 4 and press Enter.
