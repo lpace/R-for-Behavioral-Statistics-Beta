@@ -10,7 +10,7 @@
   Output: Hi, I'm Dr. Larry Pace, your instructor for this series of lessons on how to use R for the behavioral and social sciences. I am happy to be working with you and would appreciate any feedback you might have on these lessons.
 
 - Class: text
-  Output: In this introductory lesson, we will discuss some of the basics of R. I highly recommend that you use RStudio for these lessons, although they will work with the regular version of R as well.
+  Output: In this introductory lesson, we will discuss some of the basics of R. I highly recommend that you use for these lessons, although they will work with the regular version of R as well.
 
 - Class: text
   Output: In R, everything is an object of some sort. We also work with functions in R. This makes R simultaneously object-oriented and functional. In this lesson, you will get a better feeling for R functions and objects and how they work. R is a programming language and statistical computing environment rolled into one. 
@@ -175,4 +175,4 @@
   Hint: To list the objects in your current workspace, use ls().
 
 - Class: text
-  Output: Congratulations! You have finished the introductory lesson. Now you know enough to move ahead into a more detailed lesson on working with vectors in R. See you soon!
+  Output: Congratulations! You have finished the introductory lesson. Now you know enough about R functions and objects to move ahead into a more detailed lesson on working with vectors in R. See you soon!
