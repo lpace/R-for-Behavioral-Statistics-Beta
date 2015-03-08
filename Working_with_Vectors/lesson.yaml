@@ -25,7 +25,7 @@
   Hint: Type str(x) and press Enter.
 
 - Class: cmd_question
-  Output: Every element of a vector has an index, and we can use these indexes to subset, add, replace, and remove vector elements. This works with both character and numeric vectors. For example, type x[1:5] to see the first five elements of x.
+  Output: As you see, x is an integer vector with 10 elements. Every element of a vector has an index, and we can use these indexes to subset, add, replace, and remove vector elements. This works with both character and numeric vectors. For example, type x[1:5] to see the first five elements of x.
   CorrectAnswer: x[1:5]
   AnswerTests: omnitest(correctExpr = 'x[1:5]')
   Hint: Type x[1:5] and press Enter.
@@ -43,19 +43,19 @@
   Hint: Type y[1:5] and press Enter.
 
 - Class: cmd_question
-  Output: Note that R encloses character strings and single characters in quotation marks. When you try to mix data types in a vector, R will coerce the data to a single type. For example, if you were to try to make a vector with numbers and characters, the entire vector would become a character vector. To see this, combine x and y by typing z <- c(x, y).
+  Output: Note that R encloses character strings and single characters in quotation marks. When you try to mix data types in a vector, R will coerce the data to a single type. For example, if you were to try to make a vector with numbers and characters, the entire vector would become a character vector. One of the easiest ways to enter small amounts of data or to combine different vectors is the c() function. To see this in operation, combine x and y by typing z <- c(x, y).
   CorrectAnswer: z <- c(x, y)
   AnswerTests: omnitest(correctExpr = 'z <- c(x, y)')
   Hint: Type z <- c(x, y) and press Enter.
 
 - Class: cmd_question
-  Output: Check the structure of z by typing str(z) and pressing Enter.
+  Output: Right. Now we have a new vector, z. Check the structure of z by typing str(z) and pressing Enter.
   CorrectAnswer: str(z)
   AnswerTests: omnitest(correctExpr = 'str(z)')
   Hint: Type str(z) and press Enter.
 
 - Class: cmd_question
-  Output: Yes, z is a character vector, and the numbers are now represented as characters. It is important to remember that a vector can contain only one type of data. To remove an unwanted object from your workspace, use the rm() for remove function. Let's get rid of z, as we will not need it any longer. At the command prompt, type rm(z) and press Enter.
+  Output: As you see, z is a character vector, and the numbers are now represented as characters. It is important to remember that a vector can contain only one type of data. To remove an unwanted object from your workspace, use the rm() for remove function. Let's get rid of z, as we will not need it any longer. At the command prompt, type rm(z) and press Enter.
   CorrectAnswer: rm(z)
   AnswerTests: omnitest(correctExpr= 'rm(z)')
   Hint: Type rm(z) and press Enter.
@@ -102,8 +102,14 @@
   AnswerTests: omnitest(correctExpr='x["e"]')
   Hint: Type x["e"] and press Enter.
 
+- Class: cmd_question
+  Output: When we need to, we can access specific vector elements. These do not have to be consecutive like the examples we have used previously. For example, type x[c(1, 3, 5, 7)] and press Enter.
+  CorrectAnswer: x[c(1, 3, 5, 7)]
+  AnswerTests: omnitest(correctExpr = 'x[c(1, 3, 5, 7)]')
+  Hint: Type x[1, 3, 5, 7] and press Enter.
+
 - Class: text
-  Output: Now you know about vectors, their elements, their indexes, and the ability to name elements. Let's examine vectorized operations in R in a little more detail.
+  Output: You have learned about vectors, their elements, how to use their indexes, and the ability to name elements. Let's examine vectorized operations in R in a little more detail.
 
 - Class: cmd_question
   Output: Create a vector y with a series of quiz scores. Type y <- c(99, 100, 92, 91, 84, 71, 78, 97, 90, 98, 70, 81, 82, 85, 75)
@@ -163,4 +169,38 @@
   Hint: Type y < 85 and press Enter.
 
 - Class: text
-  Output: As you see, R produces a logical vector, with one element for each comparison. The first seven elements of y are indeed less than 85, while the remaining elements are not. R's other logical operators are similarly vectorized, so they work in the same.
+  Output: As you see, R produces a logical vector, with one element for each comparison. The first seven elements of y are indeed less than 85, while the remaining elements are not. R's other logical operators are similarly vectorized, so they work in the same fashion. In addition to vectors, we can have many other types of data in R. These types include matrices, lists, and data frames. We are also able to work with tables in R. Let's have a quick review of this lesson and a short quiz.
+
+- Class: text
+  Output: There are six atomic vector types in R. These are integer, real, character, logical, complex, and raw. We will work mostly with numeric (integer and real), character, and logical vectors in these lessons. Every element of a vector has its own index, beginning with [1]. Vector elements can also have names assigned to them. We can use the names or the indexes to work with elements in the vectors. Vectors can contain only one type of data, and R will coerce the data to a common type if you try to combine data types in a single vector. When you are working with two vectors of different lengths, R will recycle the shorter vector, including a vector of length 1, until it reaches the end of the longer vector. You can find the number of elements in a vector by using the length() function.
+
+- Class: mult_question
+  Output: How many vector types are there in R?
+  AnswerChoices: 6;4;8;2
+  CorrectAnswer: 6
+  AnswerTests: omnitest(correctVal= '6')
+  Hint: We use mainly numeric (integer and real), character, and logical vectors, but there are two others.
+
+- Class: mult_question
+  Output: Every element of a vector has ___________.
+  AnswerChoices: an index;a name;an address; a function
+  CorrectAnswer: an index
+  AnswerTests: omnitest(correctVal= 'an index')
+  Hint: Remember what the [1] before your answer means.
+
+- Class: mult_question
+  Output: When you are working with two vectors of different lengths, R will ________ the elements of the shorter vector until it comes to the end of the longer vector.
+  AnswerChoices: recycle;vectorize;randomize; repeat
+  CorrectAnswer: recycle
+  AnswerTests: omnitest(correctVal= 'recycle')
+  Hint: What do you do when you go to the recycling center?
+
+- Class: mult_question
+  Output: What is the best way to find out how many elements are in an R vector?
+  AnswerChoices: Use the length() function.;Count the elements yourself.;Use the size() function; Use n(vector_name).
+  CorrectAnswer: Use the length() function.
+  AnswerTests: omnitest(correctVal= 'Use the length() function.')
+  Hint: Remember that the length of the vector is the number of elements.
+
+- Class: text
+  Output: Congratulations! You have now finished your introduction to vectors. You are ready to move on to other data structures in the next lesson.
