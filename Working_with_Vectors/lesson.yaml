@@ -73,7 +73,7 @@
   Hint: Type x and press Enter.
 
 - Class: text
-  Output: NA is a special character in R, and it is the only code recognized by R for missing data. If you are working with data from another application that uses some other way to code missing data, you will need to recode the missing values to NA, either in that other application, or in R, in order to be able to use the data in R. We will discuss this matter in more depth in our upcoming lesson on subsetting and recoding data.
+  Output: NA is a special character in R, and it is the only code recognized by R for missing data. If you are working with data from another application that uses some other way to code missing data, you will need to recode the missing values to NA, either in the other application or in R, to be able to use the data in R. We will discuss this matter in more depth in our upcoming lesson on subsetting and recoding data.
 
 - Class: cmd_question
   Output: For now, let's reassign the correct value to x[5]. Type x[5] <- 5 and press Enter.
@@ -151,7 +151,7 @@
   Hint: Type rm(z) and press Enter.
 
 - Class: cmd_question
-  Output: You saw in the introductory lesion that you can make logical comparisons in R. These can be applied to vectors, too. Let's sort the y vector to make this clearer. At the command prompt, type y <- sort(y) and press Enter. 
+  Output: You saw in the introductory lesson that you can make logical comparisons in R. These can be applied to vectors, too. Let's sort the y vector to make this clearer. At the command prompt, type y <- sort(y) and press Enter. 
   CorrectAnswer: y <- sort(y)
   AnswerTests: omnitest(correctExpr='y <- sort(y)')
   Hint: Type y <- sort(y) and press Enter.
