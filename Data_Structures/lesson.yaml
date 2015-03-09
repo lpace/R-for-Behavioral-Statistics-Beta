@@ -40,14 +40,32 @@
   Hint: Type dim(xMatrix) and press Enter.
 
 - Class: text
-  Output: As you see, the matrix has dimensionality, as defined by the number of rows and the number of columns. We can use many R functions with matrices, and we will address matrix manipulations in more depth in a future lesson. For now, let's concentrate on a few more basic aspects of matrices in our introduction to data structures. You might be interested to know that R can deal with higher-dimensional arrays, too, but we will confine ourselves to matrices and data frames with rows and columns of data.
+  Output: As you see, the matrix has dimensionality, as defined by the number of rows and the number of columns. We can use many R functions with matrices, and we will address matrix manipulations in more depth in a future lesson. For now, let's concentrate on a few more basic aspects of matrices in our introduction to data structures. You might be interested to know that R can deal with higher-dimensional arrays, too, but we will confine ourselves to two-way matrices and data frames with rows and columns of data.
 
 - Class: cmd_question
   Output: Let's use indexing with our matrix in a fashion similar to that we did with vectors in our previous lesson. Type xMatrix[1, ]  and press Enter to see the first row of the matrix.
   CorrectAnswer: xMatrix[1, ]
   AnswerTests: omnitest(correctExpr='xMatrix[1, ]')
-  Hint: Type xMatrix[1, ]
+  Hint: Type xMatrix[1, ] and press Enter.
 
 - Class: cmd_question
-  Output: Similarly, you can see the fifth column of the matrix by typing x[, 5] and pressing Enter.
+  Output: Similarly, you can see the fifth column of the matrix by typing xMatrix[, 5] and pressing Enter.
+  CorrectAnswer: xMatrix[, 5]
+  AnswerTests: omnitest(correctExpr= ' xMatrix[, 5]')
+  Hint: Type xMatrix[, 5] and press Enter.
+
+- Class: cmd_question
+  Output: As with vectors, you can name columns and rows of your matrices. Let's take advantage of the paste function and name the colums of our xMatrix x1, x2, x3, ..., x10. We must specify sep = "" to keep R from adding a space between the letter and the number. At the command prompt, type colnames(xMatrix) <- paste("x", 1:10, sep = "") and press Enter.
+  CorrectAnswer: colnames(xMatrix) <- paste("x", 1:10, sep = "")
+  AnswerTests: omnitest(correctExpr = 'colnames(xMatrix) <- paste("x", 1:10, sep = "")')
+  Hint: Type colnames(xMatrix) <- paste("x", 1:10, sep = "") and press Enter.
+
+- Class: cmd_question
+  Output: "Now, use the built in letters to name the rows of our matrix. Type rownames(xMatrix) <- letters[1:5] and press Enter."
+  CorrectAnswer: rownames(xMatrix) <- letters[1:5]
+  AnswerTests: omnitest(correctExpr = 'rownames(xMatrix) <- letters[1:5]')
+  Hint: Type rownames(xMatrix) <- letters[1:5] and press Enter.
+
+
+
 
