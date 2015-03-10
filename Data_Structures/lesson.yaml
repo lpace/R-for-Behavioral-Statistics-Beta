@@ -31,7 +31,7 @@
   Hint: Type xMatrix and press Enter.
 
 - Class: text
-  Output: As you see, Each cell of the matrix has a row index and a column index. You can also see that by default, R populated the matrix in a column-wise fashion. You can refer to an entire row or column by using a comma as an index. To clarify, the index of the cell with the number 50 in it is xmatrix[5, 10]. We can use this matrix-type indexing with data frames, too, as you will learn.
+  Output: As you see, Each cell of the matrix has a row index and a column index. You can also see that by default, R populated the matrix in a column-wise fashion. You can refer to an entire row or column by using a comma as an index. To clarify, the index of the cell with the number 50 in it is xMatrix[5, 10]. We can use this matrix-type indexing with data frames, too, as you will learn.
 
 - Class: cmd_question
   Output: Let's determine the dimensions of our matrix. Type dim(xMatrix) and press Enter.
@@ -73,7 +73,49 @@
   Hint: Type colSums(xMatrix) and press Enter.
 
 - Class: cmd_question
-  Output: Now, let's lood at the row sums. Type rowSums(xMatrix) and press Enter.
+  Output: Now, let's look at the row sums. Type rowSums(xMatrix) and press Enter.
   CorrectAnswer: rowSums(xMatrix)
   AnswerTests: omnitest(correctExpr='rowSums(xMatrix)')
   Hint: Type rowSums(xMatrix) and press Enter.
+
+- Class: text
+  Output: There is much more we can do with matrices, but let's save that for a future lesson devoted exclusively to using matrix algebra and other manipulations for statistical compuations. Now you know about vectors and matrices. Let's look at another important data structure, the list. Unlike vectors, lists can contain more than one type of data. The indexing for lists is different from that for vectors and matrices, as well. We can use lists in various ways, as you will soon learn.
+
+- Class: cmd_question 
+  Output: Here's how we can create a list. Let's say we are making a bibliography, and want to create an entry for one of the books we are using. We will just use the author, title, and year to keep the example simple. At the command prompt type author <- "John W. Tukey" and press Enter. 
+  CorrectAnswer: author <- "John W. Tukey"
+  AnswerTests: omnitest(correctExpr='author <- "John W. Tukey"')
+  Hint: Type author <- "John W. Tukey" and press Enter.
+
+- Class: cmd_question
+  Output: Now, type title <- "Exploratory Data Analysis" and press Enter.
+  CorrectAnswer: title <- "Exploratory Data Analysis"
+  AnswerTests: omnitest(correctExpr='title <- "Exploratory Data Analysis"')
+  Hint: Type title <- "Exploratory Data Analysis" and press Enter.
+
+- Class: cmd_question
+  Output: Next, type year <- 1997
+  CorrectAnswer: year <- 1997
+  AnswerTests: omnitest(correctExpr='year <- 1997')
+  Hint: Type year <- 1997 and press Enter.
+
+- Class: cmd_question
+  Output: Now we can make our list. Type book1 <- list(author, title, year) and press Enter.
+  CorrectAnswer: book1 <- list(author, title, year)
+  AnswerTests: omnitest(correctExpr='book1 <- list(author, title, year)')
+  Hint: Type book1 <- list(author, title, year) and press Enter.
+
+- Class: cmd_question
+  Output: Type book1 and press Enter to see your list.
+  CorrectAnswer: book1
+  AnswerTests: omnitest(correctExpr='book1')
+  Hint: Type book1 and press Enter.
+
+- Class: text
+  Output: As I indicated, lists use a different form of indexing. The list contains both character and numeric data, and each element has an index with double square brackets, such as book[[1]]. The double brackets in book[[1]] refer to the actual character or numeric entry in the first element of the list, while book[1] refers to the list containing that entry. This will become clearer in a moment.  
+
+- Class: cmd_question
+  Output: As we often do, let's check the structure of our list. Type str(book1) and press Enter.
+  CorrectAnswer: str(book1)
+  AnswerTests: omnitest(correctExpr='str(book1)')
+  Hint: Type str(book1) and press Enter.
