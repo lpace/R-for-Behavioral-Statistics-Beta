@@ -66,6 +66,14 @@
   AnswerTests: omnitest(correctExpr = 'rownames(xMatrix) <- letters[1:5]')
   Hint: Type rownames(xMatrix) <- letters[1:5] and press Enter.
 
+- Class: cmd_question
+  Output: With matrices, you can use the colSums and rowSums functions to calculate column or row sums. For example, let's determine the sum for each column in our xMatrix by typing colSums(xMatrix) and pressing Enter.
+  CorrectAnswer: colSums(xMatrix)
+  AnswerTests: omnitest(correctExpr='colSums(xMatrix)')
+  Hint: Type colSums(xMatrix) and press Enter.
 
-
-
+- Class: cmd_question
+  Output: Now, let's lood at the row sums. Type rowSums(xMatrix) and press Enter.
+  CorrectAnswer: rowSums(xMatrix)
+  AnswerTests: omnitest(correctExpr='rowSums(xMatrix)')
+  Hint: Type rowSums(xMatrix) and press Enter.
