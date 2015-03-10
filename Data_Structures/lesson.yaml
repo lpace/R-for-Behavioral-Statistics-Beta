@@ -119,3 +119,45 @@
   CorrectAnswer: str(book1)
   AnswerTests: omnitest(correctExpr='str(book1)')
   Hint: Type str(book1) and press Enter.
+
+- Class: text
+  Output: As you see, book1 is a list with three elements, each of which is a list itself. We can use lists for many different purposes in addition to combining different data types. For example, say I have three different classes, each of which has a different number of students, and I want to compare the mean test scores for the three classes. I can make a vector for each class, and then combine the vectors into a single list. Let's keep the example small to make things easier.
+
+- Class: cmd_question
+  Output: At the command prompt, type class1 <- c(78, 88, 93, 94, 92, 86) and press Enter.
+  CorrectAnswer: class1 <- c(78, 88, 93, 94, 92, 86)
+  AnswerTests: omnitest(correctExpr='class1 <- c(78, 88, 93, 94, 92, 86)')
+  Hint: Type class1 <- c(78, 88, 93, 94, 92, 86) and press Enter.
+
+- Class: cmd_question
+  Output: Now, type class2 <- c(65, 82, 90, 82, 85) and press Enter.
+  CorrectAnswer: class2 <- c(65, 82, 90, 82, 85)
+  AnswerTests: omnitest(correctExpr='class2 <- c(65, 82, 90, 82, 85)')
+  Hint: Type class1 <- class 2 <- c(65, 82, 90, 82, 85) and press Enter.
+
+- Class: cmd_question
+  Output: Last, type class3 <- c(78, 85, 89, 84) and press Enter.
+  CorrectAnswer: class3 <- c(78, 85, 89, 84)
+  AnswerTests: omnitest(correctExpr='class3 <- c(78, 85, 89, 84)')
+  Hint: Type class3 <- c(65, 82, 90, 82, 85) and press Enter.
+
+- Class: cmd_question
+  Output: Here's where it gets a little more interesting. Combine all three classes into one list by typing classes <- list(class1, class2, class3)
+  CorrectAnswer: classes <- list(class1, class2, class3)
+  AnswerTests: omnitest(correctExpr='classes <- list(class1, class2, class3)')
+  Hint: Type classes <- list(class1, class2, class3) and press Enter.
+
+- Class: text
+  Output: R has a family of functions that allow us to apply other R functions to vectors, matrices, lists, and data frames. Let's use the lapply function to find the means for the three classes.
+
+- Class: cmd_question
+  Output: At the command prompt, type lapply(classes, mean) and press Enter.
+  CorrectAnswer: lapply(classes, mean)
+  AnswerTests: omnitest(correctExpr='lapply(classes, mean)')
+  Hint: Type lapply(classes, mean) and press Enter.
+
+- Class: cmd_question
+  Output: As you see, the lapply function created a new list with the separate means. If if is possible to do so, the sapply function will simplify the output. Type sapply(classes, mean) and press Enter.
+  CorrectAnswer: sapply(classes, mean)
+  AnswerTests: omnitest(correctExpr='sapply(classes, mean)')
+  Hint: Type sapply(classes, mean) and press Enter.
