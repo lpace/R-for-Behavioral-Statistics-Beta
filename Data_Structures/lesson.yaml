@@ -161,3 +161,27 @@
   CorrectAnswer: sapply(classes, mean)
   AnswerTests: omnitest(correctExpr='sapply(classes, mean)')
   Hint: Type sapply(classes, mean) and press Enter.
+
+- Class: text
+  Output: See that the sapply function produced a vector here, rather than a list, making the output easier to read. Now that you have worked with matrices and lists, let's look at the data frame. In R, a data frame is rectangular like matrix. That means that the data frame is arranged by rows and columns and can be addressed like a matrix with two indexes. You can also address variables in data frames by their names. 
+
+- Class: text
+  Output: Data frames, like lists, can also contain different data types. In fact, to R, a data frame is also a list, just a special one in which each column has the same number of rows, as in a matrix. Data frames are the most common way to store and use data in R.
+
+- Class: cmd_question
+  Output: There are many ways to create data frames in R, and you can read data from a variety of formats into data frames. Because we have been dealing with individuals and quiz scores, let's create a data frame by creating a vector of student names and a vector of test scores, and then making a data frame from the combination. At the command prompt, type scores <- c(99, 88, 74, 92, 79) and press Enter.
+  CorrectAnswer: scores <- c(99, 88, 74, 92, 79)
+  AnswerTests: omnitest(correctExpr='scores <- c(99, 88, 74, 92, 79)')
+  Hint: Type scores <- c(99, 88, 74, 92, 79) and press Enter.
+
+- Class: cmd_question
+  Output: Now, we will make a vector of the names of our students. At the command prompt, type students <- c("Shirley", "Saahira", "Payton", "Jordan", "Nathan") and press Enter.
+  CorrectAnswer: students <- c("Shirley", "Saahira", "Payton", "Jordan", "Nathan")
+  AnswerTests: omnitest(correctExpr='students <- c("Shirley", "Saahira", "Payton", "Jordan", "Nathan")')
+  Hint: Type students <- c("Shirley", "Saahira", "Payton", "Jordan", "Nathan") and press Enter.
+
+- Class: cmd_question
+  Output: Now, let's make a data frame from our students' names and test scores. At the command prompt, type testScores <- data.frame(cbind(students, scores)) and press Enter
+  CorrectAnswer: testScores <- data.frame(cbind(students, scores))
+  AnswerTests: omnitest(correctExpr='testScores <- data.frame(cbind(students, scores))')
+  Hint: Type testScores <- data.frame(cbind(students, scores)) and press Enter.
