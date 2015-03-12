@@ -175,13 +175,19 @@
   Hint: Type scores <- c(99, 88, 74, 92, 79) and press Enter.
 
 - Class: cmd_question
-  Output: Now, we will make a vector of the names of our students. At the command prompt, type students <- c("Shirley", "Saahira", "Payton", "Jordan", "Nathan") and press Enter.
-  CorrectAnswer: students <- c("Shirley", "Saahira", "Payton", "Jordan", "Nathan")
-  AnswerTests: omnitest(correctExpr='students <- c("Shirley", "Saahira", "Payton", "Jordan", "Nathan")')
-  Hint: Type students <- c("Shirley", "Saahira", "Payton", "Jordan", "Nathan") and press Enter.
+  Output: Now, we will make a vector of the names of our students. At the command prompt, type students <- c("Shirley", "Saahira", "Peyton", "Jordan", "Nathan") and press Enter.
+  CorrectAnswer: students <- c("Shirley", "Saahira", "Peyton", "Jordan", "Nathan")
+  AnswerTests: omnitest(correctExpr='students <- c("Shirley", "Saahira", "Peyton", "Jordan", "Nathan")')
+  Hint: Type students <- c("Shirley", "Saahira", "Peyton", "Jordan", "Nathan") and press Enter.
 
 - Class: cmd_question
   Output: Now, let's make a data frame from our students' names and test scores. At the command prompt, type testScores <- data.frame(cbind(students, scores)) and press Enter
   CorrectAnswer: testScores <- data.frame(cbind(students, scores))
   AnswerTests: omnitest(correctExpr='testScores <- data.frame(cbind(students, scores))')
   Hint: Type testScores <- data.frame(cbind(students, scores)) and press Enter.
+
+- Class: cmd_question
+  Output: Now, let's add a factor to our data frame. At the command prompt, type sex <- c("female", "female", "female", "male", "male") and press Enter.
+  CorrectAnswer: sex <- c("female", "female", "female", "male", "male")
+  AnswerTests: omnitest(correctExpr='sex <- c("female", "female", "female", "male", "male")')
+  Hint: Type sex <- c("female", "female", "female", "male", "male") and press Enter.
