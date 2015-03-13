@@ -163,7 +163,7 @@
   Hint: Type sapply(classes, mean) and press Enter.
 
 - Class: text
-  Output: See that the sapply function produced a vector here, rather than a list, making the output easier to read. Now that you have worked with matrices and lists, let's look at the data frame. In R, a data frame is rectangular like matrix. That means that the data frame is arranged by rows and columns and can be addressed like a matrix with two indexes. You can also address variables in data frames by their names. 
+  Output: See that the sapply function produced a vector here, rather than a list, making the output easier to read. Now that you have worked with matrices and lists, let's look at the data frame. In R, a data frame is rectangular like a matrix. That means that the data frame is arranged by rows and columns and can be addressed like a matrix with two indexes. Every column has the same number of rows. You can also address variables in data frames by their names, as you will soon seel
 
 - Class: text
   Output: Data frames, like lists, can also contain different data types. In fact, to R, a data frame is also a list, just a special one in which each column has the same number of rows, as in a matrix. Data frames are the most common way to store and use data in R.
@@ -175,19 +175,34 @@
   Hint: Type scores <- c(99, 88, 74, 92, 79) and press Enter.
 
 - Class: cmd_question
-  Output: Now, we will make a vector of the names of our students. At the command prompt, type students <- c("Shirley", "Saahira", "Peyton", "Jordan", "Nathan") and press Enter.
-  CorrectAnswer: students <- c("Shirley", "Saahira", "Peyton", "Jordan", "Nathan")
-  AnswerTests: omnitest(correctExpr='students <- c("Shirley", "Saahira", "Peyton", "Jordan", "Nathan")')
-  Hint: Type students <- c("Shirley", "Saahira", "Peyton", "Jordan", "Nathan") and press Enter.
+  Output: Now, we will make a vector of the names of our students. At the command prompt, type students <- c("Shirley", "Saahira", "Payton", "Jordan", "Nathan") and press Enter.
+  CorrectAnswer: students <- c("Shirley", "Saahira", "Payton", "Jordan", "Nathan")
+  AnswerTests: omnitest(correctExpr='students <- c("Shirley", "Saahira", "Payton", "Jordan", "Nathan")')
+  Hint: Type students <- c("Shirley", "Saahira", "Payton", "Jordan", "Nathan") and press Enter.
 
 - Class: cmd_question
-  Output: Now, let's make a data frame from our students' names and test scores. At the command prompt, type testScores <- data.frame(cbind(students, scores)) and press Enter
-  CorrectAnswer: testScores <- data.frame(cbind(students, scores))
-  AnswerTests: omnitest(correctExpr='testScores <- data.frame(cbind(students, scores))')
-  Hint: Type testScores <- data.frame(cbind(students, scores)) and press Enter.
+  Output: Now, let's make a data frame from our students' names and test scores. In order to keep R from making our student names into a factor, we will use the setting stringsAsFactors = FALSE. At the command prompt, type testScores <- data.frame(students, scores, stringsAsFactors = FALSE) and press Enter
+  CorrectAnswer: testScores <- data.frame(students, scores, stringsAsFactors = FALSE)
+  AnswerTests: omnitest(correctExpr='testScores <- data.frame(students, scores, stringsAsFactors = FALSE)')
+  Hint: Type testScores <- data.frame(students, scores, stringsAsFactors = FALSE) and press Enter.
 
 - Class: cmd_question
-  Output: Now, let's add a factor to our data frame. At the command prompt, type sex <- c("female", "female", "female", "male", "male") and press Enter.
+  Output: Now, let's add a vector of students' sexes to the data frame. At the command prompt, type sex <- c("female", "female", "female", "male", "male") and press Enter.
   CorrectAnswer: sex <- c("female", "female", "female", "male", "male")
   AnswerTests: omnitest(correctExpr='sex <- c("female", "female", "female", "male", "male")')
   Hint: Type sex <- c("female", "female", "female", "male", "male") and press Enter.
+
+- Class: text
+  Output: We can address the vectors in data frames either by matrix-type indexing or by using a $ to separate the data frame name and the variable name. We can also attach the data frame and use the variable names directly.
+
+- Class: cmd_question
+  Output: "Let's add our character vector of the sexes to the data frame. One of several ways to do this is to declare the new variable to be part of the data frame. Let's do it that way. At the command prompt, type testScores$sex <- sex and press Enter."
+  CorrectAnswer: testScores$sex <- sex
+  AnswerTests: omnitest(correctExpr='testScores$sex <- sex')
+  Hint: Type testScores$sex <- sex and press Enter.
+
+- Class: cmd_question
+  Output: Now, check the structure of our data frame by typing str(testScores) and pressing Enter.
+  CorrectAnswer: str(testScores)
+  AnswerTests: omnitest(correctExpr='str(testScores)')
+  Hint: Type str(testScores) and press Enter.
