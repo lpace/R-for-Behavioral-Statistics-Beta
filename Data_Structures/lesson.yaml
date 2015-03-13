@@ -163,7 +163,7 @@
   Hint: Type sapply(classes, mean) and press Enter.
 
 - Class: text
-  Output: See that the sapply function produced a vector here, rather than a list, making the output easier to read. Now that you have worked with matrices and lists, let's look at the data frame. In R, a data frame is rectangular like a matrix. That means that the data frame is arranged by rows and columns and can be addressed like a matrix with two indexes. Every column has the same number of rows. You can also address variables in data frames by their names, as you will soon seel
+  Output: See that the sapply function produced a vector here, rather than a list, making the output easier to read. Now that you have worked with matrices and lists, let's look at the data frame. In R, a data frame is rectangular like a matrix. That means that the data frame is arranged by rows and columns and can be addressed like a matrix with two indexes. Every column has the same number of rows. You can also address variables in data frames by their names, as you will soon see.
 
 - Class: text
   Output: Data frames, like lists, can also contain different data types. In fact, to R, a data frame is also a list, just a special one in which each column has the same number of rows, as in a matrix. Data frames are the most common way to store and use data in R.
@@ -206,3 +206,18 @@
   CorrectAnswer: str(testScores)
   AnswerTests: omnitest(correctExpr='str(testScores)')
   Hint: Type str(testScores) and press Enter.
+
+- Class: text
+  Output: You have found that you can build a small data frame from vectors of both character and numeric data. When there are larger sets of data, it is usually more convenient to read those data into your workspace. One common way to do that is to read CSV (comma separated value) files into R.
+
+- Class: cmd_question
+  Output: For example, I have saved the mtcars dataset that comes with R as a CSV file in your current directory. To read it into a data frame, just type cars <- read.csv("mtcars.csv", stringsAsFactors = FALSE) and press Enter.
+  CorrectAnswer: cars <- read.csv("mtcars.csv", stringsAsFactors = FALSE)
+  AnswerTests: omnitest(correctExpr='cars <- read.csv("mtcars.csv", stringsAsFactors = FALSE)',)
+  Hint: Type cars <- read.csv("mtcars.csv", stringsAsFactors = FALSE) and press Enter.
+
+- Class: cmd_question
+  Output: To see the first few rows of your data frame, type head(cars) and press Enter.
+  CorrectAnswer: head(cars)
+  AnswerTests: omnitest(correctExpr='head(cars)')
+  Hint: Type head(cars) and press Enter.
