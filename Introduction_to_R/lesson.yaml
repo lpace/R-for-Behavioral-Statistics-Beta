@@ -10,7 +10,7 @@
   Output: Hi, I'm Dr. Larry Pace, your instructor for this series of lessons on how to use R for the behavioral and social sciences. I am happy to be working with you and would appreciate any feedback you might have on these lessons.
 
 - Class: text
-  Output: In this introductory lesson, we will discuss some of the basics of R. I highly recommend that you use for these lessons, although they will work with the regular version of R as well.
+  Output: In this introductory lesson, we will discuss some of the basics of R. I highly recommend that you use RStudio for these lessons, although they will work with the regular version of R as well.
 
 - Class: text
   Output: In R, everything is an object of some sort. We also work with functions in R. This makes R simultaneously object-oriented and functional. In this lesson, you will get a better feeling for R functions and objects and how they work. R is a programming language and statistical computing environment rolled into one. 
@@ -49,7 +49,7 @@
   Hint: Type x and press Enter.
 
 - Class: cmd_question
-  Output: One of the R functions you should learn is str(). It will tell you about the structure of an R object. For more complex objects, you will get more information than for simple objects. Type str(x) at the command prompt and press Enter.
+  Output: One of the R functions you will find useful is str(). It will tell you about the structure of an R object. For more complex objects, you will get more information than for simple objects. Type str(x) at the command prompt and press Enter.
   CorrectAnswer: str(x)
   AnswerTests: omnitest(correctExpr= 'str(x)')
   Hint: Type str(x) and press Enter.
@@ -88,7 +88,7 @@
   Output: R follows the standard order of operations in evaluating mathematical expressions. The standard order is parentheses, exponentiation, multiplication, division, addition, and subtraction (PEMDAS). You can use parentheses to control the order in which operations are performed. 
 
 - Class: text
-  Output: R also allows you to use the modulus operator and integer division. These may take a bit of explaining. The modulus operation for two numbers shows the remainder of the division of the number on the left by the number on the right, so if x is 10 and y is 3, x mod y is 1, the remainder. We use %% to represent modulus in R. Integer division shows us the integer result of the division without the remainder, and we use %/% to represent integer division. The result of x %/% y would be 3, the integer result.
+  Output: R also allows you to use the modulus operator and integer division. These may take a bit of explaining. The modulus operation for two numbers shows the remainder of the division of the number on the left by the number on the right, so if x is 10 and y is 3, x mod y is 1, the remainder. We use %% to represent modulus in R. Integer division shows us the integer result of the division without the remainder, and we use %/% to represent integer division. The result of 10 %/% 3 would be 3, the integer result without a remainder.
 
 - Class: cmd_question
   Output: At the command prompt, type 17 %% 4 and press Enter.
@@ -143,10 +143,10 @@
   Output: The most basic use of R is as an interactive calculator, but the power of R is that you can assign values to objects and then use the objects in your commands and expressions. R has a large number of built-in functions, including the mathematical operators, statistical functions, and many others.
 
 - Class: text
-  Output: You can mix variable names and numbers in your commands and expressions, but you must always remember that to R, a single number or a single character is still a vector of length 1. Vectorization is one of the key features of R.
+  Output: You can mix variable names and numbers in your commands and expressions. Remember that to R, a single number or a single character is still a vector of length 1. Vectorization is one of the key features of R.
 
 - Class: text
-  Output: R also has built-in functions that help you determine both the location of your working directory and its contents, as well as the current R session and its associated objects. Ready? Here's a short quiz.
+  Output: R also has built-in functions that help you determine both the location of your working directory and its contents, as well as the objects located in your current R session. Ready? Here's a short quiz.
 
 - Class: mult_question
   Output: In R, everything that exists is a(n) _________ of some sort.
