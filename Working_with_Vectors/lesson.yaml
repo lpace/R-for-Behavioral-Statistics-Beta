@@ -55,7 +55,7 @@
   Hint: Type str(z) and press Enter.
 
 - Class: cmd_question
-  Output: As you see, z is a character vector, and the numbers are now represented as characters. It is important to remember that a vector can contain only one type of data. To remove an unwanted object from your workspace, use the rm() for remove function. Let's get rid of z, as we will not need it any longer. At the command prompt, type rm(z) and press Enter.
+  Output: As you see, z is a character vector, and the numbers are now represented as characters. It is important to remember that a vector can contain only one type of data. To remove an unwanted object from your workspace, use the rm() for remove function. At the command prompt, type rm(z) and press Enter.
   CorrectAnswer: rm(z)
   AnswerTests: omnitest(correctExpr= 'rm(z)')
   Hint: Type rm(z) and press Enter.
@@ -73,7 +73,7 @@
   Hint: Type x and press Enter.
 
 - Class: text
-  Output: NA is a special character in R, and it is the only code recognized by R for missing data. If you are working with data from another application that uses some other way to code missing data, you will need to recode the missing values to NA, either in the other application or in R, to be able to use the data in R. We will discuss this matter in more depth in our upcoming lesson on subsetting and recoding data.
+  Output: See that NA replaced 5 as the fith element of the vector. NA is a special character in R, and it is the only code recognized by R for missing data. If you are working with data from another application that uses some other way to code missing data, you will need to recode the missing values to NA, either in the other application or in R, to be able to use the data in R. We will discuss this matter in more depth in our upcoming lesson on subsetting and recoding data.
 
 - Class: cmd_question
   Output: For now, let's reassign the correct value to x[5]. Type x[5] <- 5 and press Enter.
@@ -130,7 +130,7 @@
   Hint: Type y + 5 and press Enter.
 
 - Class: cmd_question
-  Output: When the longer vector is not a multiple of the shorter vector, problems can occur. For example, 15 is not evenly divisible by 2, so if we create a vector with two elements, and perform an operation using our y vector and the new vector, we will wind up with an unused element in the second vector. Let's make a vector z with two element. Type z <- c(5, 10) and press Enter.
+  Output: This produced the desired result. When the longer vector is not a multiple of the shorter vector, problems can occur. For example, 15 is not evenly divisible by 2, so if we create a vector with two elements, and perform an operation using our y vector and the new vector, we will wind up with an unused element in the second vector. Let's make a new vector called z with two elements. Type z <- c(5, 10) and press Enter.
   CorrectAnswer: z <- c(5, 10)
   AnswerTests: omnitest(correctExpr='z <- c(5, 10)')
   Hint: Type z <- c(5, 10) and press Enter.
@@ -145,7 +145,7 @@
   Output: See that R divided the first element of y by 5, the second element by 10, and repeated that pattern up to the 14th element. The last element, 75, was divided by 5, the first element of z. Because the longer vector was not a multiple of the length of the shorter vector, R gave us a warning, but it still did the calculation we asked it to do.
 
 - Class: cmd_question
-  Output: Let's go ahead and remove z, as we will not need it again. Type rm(z) and press Enter.
+  Output: Let's go ahead and remove z, as we will not use it again. Type rm(z) and press Enter.
   CorrectAnswer: rm(z)
   AnswerTests: omnitest(correctExpr='rm(z)')
   Hint: Type rm(z) and press Enter.
