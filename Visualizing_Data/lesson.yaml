@@ -57,3 +57,15 @@
 
 - Class: text
   Output: That seemed like a lot of work to get a boxplot in ggplot2, but you learned a bit about how ggplot2 works in the process, so the tradeoff is probably a good one. 
+
+- Class: cmd_question
+  Output: We won't have to do nearly so much work to produce side-by-side boxplots with ggplot2. The defaults work fine for the axis labeling. Let's make a boxplot comparing the distributions of city mpg for the different types of cars. At the command prompt, type p <- ggplot(cars, aes(type, mpgCity)) + geom_boxplot() and press Enter.
+  CorrectAnswer: p <- ggplot(cars, aes(type, mpgCity)) + geom_boxplot()
+  AnswerTests: omnitest(correctExpr='p <- ggplot(cars, aes(type, mpgCity)) + geom_boxplot()')
+  Hint: Type p <- ggplot(cars, aes(type, mpgCity)) + geom_boxplot() and press Enter.
+
+- Class: cmd_question
+  Output: Now, simply type p and press Enter to see the side-by-side boxplots.
+  CorrectAnswer: p
+  AnswerTests: omnitest(correctExpr='p')
+  Hint: Type p and press Enter.
