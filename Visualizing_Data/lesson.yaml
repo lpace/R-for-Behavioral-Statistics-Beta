@@ -19,10 +19,41 @@
   Hint: Type summary(cars$mpgCity) and press Enter.
 
 - Class: cmd_question
-  Output: You may remember that the city miles per gallon variable was positively skewed and that there were some extreme positive values. A boxplot is a good way to visualize this. At the command prompt, type boxplot(cars$mpgCity) and press Enter.
-  CorrectAnswer: boxplot(cars$mpgCity)
-  AnswerTests: omnitest(correctExpr= 'boxplot(cars$mpgCity)')
-  Hint: Type boxplot(cars$mpgCity) and press Enter.
+  Output: You may remember that the city miles per gallon variable was positively skewed and that there were some extreme positive values. A boxplot is a good way to visualize this. At the command prompt, type boxplot(cars$mpgCity, ylab = "City MPG") and press Enter.
+  CorrectAnswer: boxplot(cars$mpgCity, ylab = "City MPG")
+  AnswerTests: omnitest(correctExpr= 'boxplot(cars$mpgCity, ylab = "City MPG")')
+  Hint: Type boxplot(cars$mpgCity, ylab = "City MPG") and press Enter.
 
 - Class: text
-  Output:The box in the boxplot is drawn from the first quartile to the third quartile, and the median is shown as a darker line in the box. The whiskers extend downward from the first quartile and upward from the third quartile. The interquartile range (IQR) is the distance between the third and first quartiles, and it contains the middle 50% of the data. The circles represent outliers, values that are farther than 3/2 of the IQR from the first or third quartile. The fact that the upper whisker is longer than the lower whisker indicates that this is a skewed distribution, as we saw in our previous lesson. 
+  Output: The box in the boxplot is drawn from the first quartile to the third quartile, and the median is shown as a darker line in the box. The whiskers extend downward from the first quartile and upward from the third quartile. The interquartile range (IQR) is the distance between the third and first quartiles, and it contains the middle 50% of the data. The circles represent outliers, values that are farther than 3/2 of the IQR from the first or third quartile. The fact that the upper whisker is longer than the lower whisker indicates that this is a skewed distribution, as we saw in our previous lesson.
+
+- Class: text
+  Output: The boxplot in base R is quite serviceable, but the ggplot2 package written by Hadley Wickham provides an effective alternative. The ggplot2 packages works very differently from the graphics package in base R. We must use a "geom," which is short for a geometric object, and an "aes," which is short for aesthetic, to make plots in ggplot2. I loaded the package for you at the beginning of this lesson.
+  
+
+- Class: cmd_question
+  Output: The ggplot2 package is designed to make boxplots for factors (two or more levels), but we can use a fake factor in our aesthetic to produce a boxplot for a single variable. We will build out graphic and then plot it. At the command prompt, type p <- ggplot(cars, aes(x = factor(0), y = mpgCity)) + geom_boxplot() and press Enter.
+  CorrectAnswer: p <- ggplot(cars, aes(x = factor(0), y = mpgCity)) + geom_boxplot()
+  AnswerTests: omnitest(correctExpr='p <- ggplot(cars, aes(x = factor(0), y = mpgCity)) + geom_boxplot()')
+  Hint: Type p <- ggplot(cars, aes(x = factor(0), y = mpgCity)) + geom_boxplot() and press Enter.
+
+- Class: cmd_question
+  Output: Building up the graphic can be done in several different steps, and makes it clearer what you are doing. Let's examine the boxplot produced by ggplot2. Simply type p and press Enter to see the boxplot.
+  CorrectAnswer: 
+  AnswerTests: omnitest(correctExpr='p')
+  Hint: Type p and press Enter.
+
+- Class: cmd_question
+  Output: We can change the formatting of our boxplot to remove the unwanted label on the x-axis, the zero representing our fake factor, and the tick mark on the x-axis as well. The ggplot2 package uses themes, and one of the options is to set certain elements to blank. This is how we will do this in one addition to our plot. Type p <- p + theme(axis.title.x = element_blank(), axis.text.x = element_blank(), axis.ticks.x = element_blank()) and press Enter.
+  CorrectAnswer: p <- p + theme(axis.title.x = element_blank(), axis.text.x = element_blank(), axis.ticks.x = element_blank())
+  AnswerTests: omnitest(correctExpr='p <- p + theme(axis.title.x = element_blank(), axis.text.x = element_blank(), axis.ticks.x = element_blank())')
+  Hint: Type p <- p + theme(axis.title.x = element_blank(), axis.text.x = element_blank(), axis.ticks.x = element_blank()) and press Enter.
+
+- Class: cmd_question
+  Output: Now, examine your reformatted plot by typing p and pressing Enter.
+  CorrectAnswer: p
+  AnswerTests: omnitest(correctExpr = 'p')
+  Hint: Type p and press Enter.
+
+- Class: text
+  Output: That seemed like a lot of work to get a boxplot in ggplot2, but you learned a bit about how ggplot2 works in the process, so the tradeoff is probably a good one. 
