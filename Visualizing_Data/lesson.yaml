@@ -32,7 +32,7 @@
   
 
 - Class: cmd_question
-  Output: The ggplot2 package is designed to make boxplots for factors (two or more levels), but we can use a fake factor in our aesthetic to produce a boxplot for a single variable. We will build out graphic and then plot it. At the command prompt, type p <- ggplot(cars, aes(x = factor(0), y = mpgCity)) + geom_boxplot() and press Enter.
+  Output: The ggplot2 package is designed to make boxplots for factors (two or more levels), but we can use a fake factor in our aesthetic to produce a boxplot for a single variable. We will build our graphic and then plot it. At the command prompt, type p <- ggplot(cars, aes(x = factor(0), y = mpgCity)) + geom_boxplot() and press Enter.
   CorrectAnswer: p <- ggplot(cars, aes(x = factor(0), y = mpgCity)) + geom_boxplot()
   AnswerTests: omnitest(correctExpr='p <- ggplot(cars, aes(x = factor(0), y = mpgCity)) + geom_boxplot()')
   Hint: Type p <- ggplot(cars, aes(x = factor(0), y = mpgCity)) + geom_boxplot() and press Enter.
@@ -59,13 +59,16 @@
   Output: That seemed like a lot of work to get a boxplot in ggplot2, but you learned a bit about how ggplot2 works in the process, so the tradeoff is probably a good one. 
 
 - Class: cmd_question
-  Output: We won't have to do nearly so much work to produce side-by-side boxplots with ggplot2. The defaults work fine for the axis labeling. Let's make a boxplot comparing the distributions of city mpg for the different types of cars. At the command prompt, type p <- ggplot(cars, aes(type, mpgCity)) + geom_boxplot() and press Enter.
-  CorrectAnswer: p <- ggplot(cars, aes(type, mpgCity)) + geom_boxplot()
-  AnswerTests: omnitest(correctExpr='p <- ggplot(cars, aes(type, mpgCity)) + geom_boxplot()')
-  Hint: Type p <- ggplot(cars, aes(type, mpgCity)) + geom_boxplot() and press Enter.
+  Output: Let's make side-by-side boxplots comparing the city mileage of the three types of cars. The ggplot2 defaults are effective in this case. At the command prompt, use the command m <- ggplot(cars, aes(type, mpgCity)) + geom_boxplot() and press Enter.
+  CorrectAnswer: m <- ggplot(cars, aes(type, mpgCity)) + geom_boxplot()
+  AnswerTests: omnitest(correctExpr = 'm <- ggplot(cars, aes(type, mpgCity)) + geom_boxplot()')
+  Hint: Type m <- ggplot(cars, aes(type, mpgCity)) + geom_boxplot() and press Enter.
 
 - Class: cmd_question
-  Output: Now, simply type p and press Enter to see the side-by-side boxplots.
-  CorrectAnswer: p
-  AnswerTests: omnitest(correctExpr='p')
-  Hint: Type p and press Enter.
+  Output: Now, type m and press Enter to see your boxplots.
+  CorrectAnswer: m
+  AnswerTests: omnitest(correctExpr = 'm')
+  Hint: Type m and press Enter.
+
+- Class: text
+  Output: As you see, side-by-side boxplots are an effective way to show the mileage differences for the three types of cars. Another good way to visualize data is to use a histogram. As you might suspect, there is geom for histograms in ggplot2. Note that it is an alias for geom_bar plus stat_bin, and the default of 30 bins is not usually very a very good one. Let us create a histogram with a more reasonable number of bins for the 54 cars in our dataset.
