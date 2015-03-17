@@ -99,3 +99,21 @@
   CorrectAnswer: ggplot(cars, aes(mpgCity)) + geom_density()
   AnswerTests: omnitest(correctExpr='ggplot(cars, aes(mpgCity)) + geom_density()')
   Hint: Type ggplot(cars, aes(mpgCity)) + geom_density() and press Enter.
+
+- Class: cmd_question
+  Output: The scatterplot is a good way to show the relationship between two variables. Let's look at the relationship between the weight of the car and the city mileage. We would expect the heavier cars to get lower gas mileage, so this should be a negative correlation. We use geom_point() to make a scatterplot in ggplot2. Type s <- ggplot(cars, aes(weight, mpgCity)) + geom_point() and press Enter.
+  CorrectAnswer: s <- ggplot(cars, aes(weight, mpgCity)) + geom_point()
+  AnswerTests: omnitest(correctExpr='s <-ggplot(cars, aes(weight, mpgCity)) + geom_point()')
+  Hint: Type s <- ggplot(cars, aes(weight, mpgCity)) + geom_point() and press Enter.
+
+- Class: cmd_question
+  Output: Now, let us add the regression line with a 95% confidence region. Type s <- s + geom_smooth(method = lm) and press Enter.
+  CorrectAnswer: s <- s + geom_smooth(method = lm)
+  AnswerTests: omnitest(correctExpr='s <- s + geom_smooth(method = lm)')
+  Hint: Type s <- s + geom_smooth(method = lm) and press Enter.
+
+- Class: cmd_question
+  Output: Now, type s and press Enter to see your completed scatterplot.
+  CorrectAnswer: s
+  AnswerTests: omnitest(correctExpr='s')
+  Hint: Type s and press Enter.
