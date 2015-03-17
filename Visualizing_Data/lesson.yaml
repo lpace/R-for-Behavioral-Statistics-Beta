@@ -87,3 +87,15 @@
 
 - Class: text
   Output: We have found the data to be right-skewed, and the histogram makes this very obvious.
+
+- Class: cmd_question
+  Output: Another way to look at the same data is via a frequency polygon, which is a kind of line graph. As you would expect, there is a geom for a frequency polygon. We will continue with our bin width of 5. Let's complete our plot in one step this time. At the command prompt, type ggplot(cars, aes(mpgCity)) + geom_freqpoly(binwidth = 5) and press Enter.
+  CorrectAnswer: ggplot(cars, aes(mpgCity)) + geom_freqpoly(binwidth = 5)
+  AnswerTests: omnitest(correctExpr='ggplot(cars, aes(mpgCity)) + geom_freqpoly(binwidth = 5)')
+  Hint: Type ggplot(cars, aes(mpgCity)) + geom_freqpoly(binwidth = 5) and press Enter.
+
+- Class: cmd_question
+  Output: We can also produce a smoothed density plot as follows. Type ggplot(cars, aes(mpgCity)) + geom_density() and press Enter.
+  CorrectAnswer: ggplot(cars, aes(mpgCity)) + geom_density()
+  AnswerTests: omnitest(correctExpr='ggplot(cars, aes(mpgCity)) + geom_density()')
+  Hint: Type ggplot(cars, aes(mpgCity)) + geom_density() and press Enter.
