@@ -124,8 +124,5 @@
   AnswerTests: omnitest(correctExpr='hex <- ggplot(cars, aes(weight, mpgCity)) + stat_binhex() + geom_hex()')
   Hint: Type hex <- ggplot(cars, aes(weight, mpgCity)) + stat_binhex() + geom_hex() and press Enter.
 
-- Class: cmd_question
-  Output: Now, to see the result, type hex and press Enter.
-  CorrectAnswer: hex
-  AnswerTests: omnitest(correctExpr='hex')
-  Hint: Type hex and press Enter.
+- Class: text
+  Output: We have looked a variety of ways to examine scale data via graphic means. Now, let's have a brief review and a short quiz.
