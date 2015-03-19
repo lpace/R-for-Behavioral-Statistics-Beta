@@ -71,7 +71,7 @@
   Hint: Type b and press Enter.
 
 - Class: text
-  Output: As you see, side-by-side boxplots are an effective way to show the mileage differences for the three types of cars. Another good way to visualize data is to use a histogram. As you might suspect, there is geom for histograms in ggplot2. Note that it is an alias for geom_bar plus stat_bin, and the default of 30 bins is not usually very a very good one. Let us create a histogram with a more reasonable number of bins for the 54 cars in our dataset.
+  Output: As you see, side-by-side boxplots are an effective way to show the mileage differences for the three types of cars. Another good way to visualize data is to use a histogram. As you might suspect, there is a geom for histograms in ggplot2. Note that it is an alias for geom_bar plus stat_bin, and the default of 30 bins is not usually very a very good one. Let us create a histogram with a more reasonable number of bins for the 54 cars in our dataset.
 
 - Class: cmd_question
   Output: As mentioned above, the default in ggplot2 for a histogram is to divide the range by 30 to produce 30 bins. With only 54 cars, this is unreasonable. As the mileages range from 16 to 46, bins starting at 15 and going up to 50 will capture the shape of the mileage data nicely. We will, as before, build up the plot in stages and then print it. Here is how to make a histogram with white bars and black borders, using a bin width of 5. At the command prompt, type h <- ggplot(cars, aes(mpgCity)) + geom_histogram(fill = "white", color = "black", binwidth = 5) and press Enter.
@@ -149,7 +149,7 @@
   Output: The addition of the shading based on the frequencies in different hexagonal bins makes the overlap in the data more obvious, whereas the scatterplot provides less information in that regard. We have looked a variety of ways to examine scale data via graphic means. Now, let's have a brief review and a short quiz.
 
 - Class: text
-  Output: We covered quite a bit of ground in this module. You learned how to make boxplots using the graphics package in base R, as well as how to use ggplot2 for boxplots. Remember the boxplot is a graphic representation of the Tukey five-number summary of a dataset. Side-by-side boxplots are an effective way to compare the distributions of the dependent variable for two or more factors.
+  Output: We covered quite a bit of ground in this module. You learned how to make boxplots using the graphics package in base R, as well as how to use ggplot2 for boxplots. Remember the boxplot is a graphic representation of the Tukey five-number summary of a dataset. Side-by-side boxplots are an effective way to compare the distributions of the dependent variable for factors with two or more levels.
 
 - Class: text
   Output: You also learned how to make histograms in ggplot2. As you found, ggplot2 uses the grammar of graphics approach, with aesthetics and geometric objects that identify the variables you want to use, and the type of plot you want to produce. You also learned that you can use themes to control many aspects of the appearance of the graphics you produce. You learned, too, that you can build up the parts of the plot and then create the final plot simply by typing the name of the complete list and pressing Enter.
