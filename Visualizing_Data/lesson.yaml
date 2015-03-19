@@ -13,7 +13,7 @@
   Output: We will link our data visualization tasks with the descriptive statistics we did in our previous lesson. The combination of numerical and graphic summaries of data is called exploratory data analysis. Recall the summary function you learned in the descriptive statistics lesson. The summary adds the mean to what is known as the Tukey five-number summary of a dataset, namely, the minimum, the first quartile, the median, the third quartile, and the maximum. A graphical representation of the five-number summary is the boxplot.
 
 - Class: cmd_question
-  Output: To use the city mpg variable, we can use the data$variable notation. Let's remind ourselves of the summary of the variable. Type summary(cars$mpgCity) and press Enter.
+  Output: To access the city mpg variable, we can use the data$variable notation. Let's remind ourselves of the summary of the variable. Type summary(cars$mpgCity) and press Enter.
   CorrectAnswer: summary(cars$mpgCity)
   AnswerTests: omnitest(correctExpr= 'summary(cars$mpgCity)')
   Hint: Type summary(cars$mpgCity) and press Enter.
@@ -155,7 +155,7 @@
   Output: You also learned how to make histograms in ggplot2. As you found, ggplot2 uses the grammar of graphics approach, with aesthetics and geometric objects that identify the variables you want to use, and the type of plot you want to produce. You also learned that you can use themes to control many aspects of the appearance of the graphics you produce. You learned, too, that you can build up the parts of the plot and then create the final plot simply by typing the name of the complete list and pressing Enter.
 
 - Class: text
-  Output: In addition to boxplots and histograms, you learned how to make frequency polygons and smoothed density plots to show the shape of a data distribution. For bivariate data, you learned how to make scatterplots, including the addition of the regression line and a confidence region, as well as bivariate plots using hexagonal bins, which help us see the overlap in data more easily than do scatterplots. We will come back to more complex graphic representations in a future lesson, but for now, let's complete a short quiz to test your understanding of what you learned in this module. Ready?
+  Output: In addition to boxplots and histograms, you learned how to make dotplots, frequency polygons, and smoothed density plots to show the shape of a data distribution. For bivariate data, you learned how to make scatterplots, including the addition of the regression line and a confidence region, as well as bivariate plots using hexagonal bins, which help us see the overlap in data more easily than do scatterplots. We will come back to more complex graphic representations in a future lesson, but for now, let's complete a short quiz to test your understanding of what you learned in this module. Ready?
 
 - Class: mult_question
   Output: The graphical display of the Tukey five-number summary of a dataset is called ___________.
@@ -182,5 +182,8 @@
   Output: When you have a relatively small dataset and want to more detail than that provided by a histogram, you might choose ____________. 
   AnswerChoices: a dotplot;a bar plot; a frequency polygon; a scatterplot
   CorrectAnswer: a dotplot
-  AnswerTests: omnitest(correctVal= 'dotplot')
+  AnswerTests: omnitest(correctVal= 'a dotplot')
   Hint: Remember that dots present the frequency of individual data points.
+
+- Class: text
+  Output: Congratulations! You have finished the module on data visualization in R. Our next module covers estimation and confidence intervals. See you soon!
