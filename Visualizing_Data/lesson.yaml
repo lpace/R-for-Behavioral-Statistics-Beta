@@ -28,7 +28,7 @@
   Output: The box in the boxplot is drawn from the first quartile to the third quartile, and the median is shown as a darker line in the box. The whiskers extend downward from the first quartile and upward from the third quartile. The interquartile range (IQR) is the distance between the third and first quartiles, and it contains the middle 50% of the data. The circles represent outliers, values that are farther than 3/2 of the IQR from the first or third quartile. The fact that the upper whisker is longer than the lower whisker indicates that this is a skewed distribution, as we saw in our previous lesson.
 
 - Class: text
-  Output: The boxplot in base R is quite serviceable, but the ggplot2 package written by Hadley Wickham provides an effective alternative. The ggplot2 packages works very differently from the graphics package in base R. We must use a "geom," which is short for a geometric object, and an "aes," which is short for aesthetic, to make plots in ggplot2. I loaded the package for you at the beginning of this lesson.
+  Output: The boxplot in base R is quite serviceable, but the ggplot2 package written by Hadley Wickham provides an effective alternative. The ggplot2 package works very differently from the graphics package in base R. We must use a "geom," which is short for a geometric object, and an "aes," which is short for aesthetic, to make plots in ggplot2. I loaded the package for you at the beginning of this lesson.
   
 
 - Class: cmd_question
@@ -74,7 +74,7 @@
   Output: As you see, side-by-side boxplots are an effective way to show the mileage differences for the three types of cars. Another good way to visualize data is to use a histogram. As you might suspect, there is geom for histograms in ggplot2. Note that it is an alias for geom_bar plus stat_bin, and the default of 30 bins is not usually very a very good one. Let us create a histogram with a more reasonable number of bins for the 54 cars in our dataset.
 
 - Class: cmd_question
-  Output: As mentioned above, the default in ggplot2 for a histogram is to divide the range by 30 to produce 30 bins. With only 54 cars, this is unreasonable. As the mileages range from 16 to 46, bins starting at 15 and going up to 50 will capture the shape of the milege data nicely. We will, as before, build up the plot in stages and then print it. Here is how to make a histogram with white bars and black borders, using a bin width of 5. At the command prompt, type h <- ggplot(cars, aes(mpgCity)) + geom_histogram(fill = "white", color = "black", binwidth = 5) and press Enter.
+  Output: As mentioned above, the default in ggplot2 for a histogram is to divide the range by 30 to produce 30 bins. With only 54 cars, this is unreasonable. As the mileages range from 16 to 46, bins starting at 15 and going up to 50 will capture the shape of the mileage data nicely. We will, as before, build up the plot in stages and then print it. Here is how to make a histogram with white bars and black borders, using a bin width of 5. At the command prompt, type h <- ggplot(cars, aes(mpgCity)) + geom_histogram(fill = "white", color = "black", binwidth = 5) and press Enter.
   CorrectAnswer: h <- ggplot(cars, aes(mpgCity)) + geom_histogram(fill = "white", color = "black", binwidth = 5)
   AnswerTests: omnitest(correctExpr='h <- ggplot(cars, aes(mpgCity)) + geom_histogram(fill = "white", color = "black", binwidth = 5)')
   Hint: Type h <- ggplot(cars, aes(mpgCity)) + geom_histogram(fill = "white", color = "black", binwidth = 5) and press Enter.
@@ -131,7 +131,7 @@
   Hint: Type hex and press Enter.
 
 - Class: text
-  Output: The addition of the shading based on the frequencis in different hexagonal bins makes the overlap in the data more obvious, whereas the scatterplot provides less information in that regard. We have looked a variety of ways to examine scale data via graphic means. Now, let's have a brief review and a short quiz.
+  Output: The addition of the shading based on the frequencies in different hexagonal bins makes the overlap in the data more obvious, whereas the scatterplot provides less information in that regard. We have looked a variety of ways to examine scale data via graphic means. Now, let's have a brief review and a short quiz.
 
 - Class: text
   Output: We covered quite a bit of ground in this module. You learned how to make boxplots using the graphics package in base R, as well as how to use ggplot2 for boxplots. Remember the boxplot is a graphic representation of the Tukey five-number summary of a dataset. Side-by-side boxplots are an effective way to compare the distributions of the dependent variable for two or more factors.
@@ -151,7 +151,7 @@
 
 - Class: mult_question
   Output: The term geom as used in in ggplot2 is short for ____________.
-  AnswerChoices: geometric object;geometric element;geographic moment; graphical element object modifer
+  AnswerChoices: geometric object;geometric element;geographic moment; graphical element object modifier
   CorrectAnswer: geometric object
   AnswerTests: omnitest(correctVal= 'geometric object')
   Hint: Remember that everything in R is a function or an object of some kind.
