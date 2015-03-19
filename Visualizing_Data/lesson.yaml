@@ -19,7 +19,7 @@
   Hint: Type summary(cars$mpgCity) and press Enter.
 
 - Class: cmd_question
-  Output: You may remember that the city miles per gallon variable was positively skewed and that there were some extreme positive values. A boxplot is a good way to visualize this. At the command prompt, type boxplot(cars$mpgCity, ylab = "City MPG") and press Enter.
+  Output: You may remember that the city miles per gallon variable was positively skewed and that there were some extreme positive values. A boxplot is a good way to visualize this. A boxplot is the graphical representation of the Tukey five-number summary of a dataset. At the command prompt, type boxplot(cars$mpgCity, ylab = "City MPG") and press Enter.
   CorrectAnswer: boxplot(cars$mpgCity, ylab = "City MPG")
   AnswerTests: omnitest(correctExpr= 'boxplot(cars$mpgCity, ylab = "City MPG")')
   Hint: Type boxplot(cars$mpgCity, ylab = "City MPG") and press Enter.
@@ -119,10 +119,46 @@
   Hint: Type s and press Enter.
 
 - Class: cmd_question
-  Output: Another interesting way to examine bivariate data is to place the data into hexagonal bins. We can accomplish this in ggplot2 as follows. Type hex <- ggplot(cars, aes(weight, mpgCity)) + stat_binhex() + geom_hex() and press Enter. 
+  Output: Scatterplots are often used to display bivariate data. Another interesting way to examine bivariate data is to place the data into hexagonal bins. We can accomplish this in ggplot2 as follows. Type hex <- ggplot(cars, aes(weight, mpgCity)) + stat_binhex() + geom_hex() and press Enter. 
   CorrectAnswer: hex <- ggplot(cars, aes(weight, mpgCity)) + stat_binhex() + geom_hex()
   AnswerTests: omnitest(correctExpr='hex <- ggplot(cars, aes(weight, mpgCity)) + stat_binhex() + geom_hex()')
   Hint: Type hex <- ggplot(cars, aes(weight, mpgCity)) + stat_binhex() + geom_hex() and press Enter.
 
+- Class: cmd_question
+  Output: To see your completed plot, type hex and press Enter.
+  CorrectAnswer: hex
+  AnswerTests: omnitest(correctExpr = 'hex')
+  Hint: Type hex and press Enter.
+
 - Class: text
-  Output: We have looked a variety of ways to examine scale data via graphic means. Now, let's have a brief review and a short quiz.
+  Output: The addition of the shading based on the frequencis in different hexagonal bins makes the overlap in the data more obvious, whereas the scatterplot provides less information in that regard. We have looked a variety of ways to examine scale data via graphic means. Now, let's have a brief review and a short quiz.
+
+- Class: text
+  Output: We covered quite a bit of ground in this module. You learned how to make boxplots using the graphics package in base R, as well as how to use ggplot2 for boxplots. Remember the boxplot is a graphic representation of the Tukey five-number summary of a dataset. Side-by-side boxplots are an effective way to compare the distributions of the dependent variable for two or more factors.
+
+- Class: text
+  Output: You also learned how to make histograms in ggplot2. As you found, ggplot2 uses the grammar of graphics approach, with aesthetics and geometric objects that identify the variables you want to use, and the type of plot you want to produce. You also learned that you can use themes to control many aspects of the appearance of the graphics you produce. You learned, too, that you can build up the parts of the plot and then create the final plot simply by typing the name of the complete list and pressing Enter.
+
+- Class: text
+  Output: In addition to boxplots and histograms, you learned how to make frequency polygons and smoothed density plots to show the shape of a data distribution. For bivariate data, you learned how to make scatterplots, including the addition of the regression line and a confidence region, as well as bivariate plots using hexagonal bins, which help us see the overlap in data more easily than do scatterplots. We will come back to more complex graphic representations in a future lesson, but for now, let's complete a short quiz to test your understanding of what you learned in this module. Ready?
+
+- Class: mult_question
+  Output: The graphical display of the Tukey five-number summary of a dataset is called ___________.
+  AnswerChoices: the boxplot;the dotplot;the summary plot; the Tukey plot
+  CorrectAnswer: the boxplot
+  AnswerTests: omnitest(correctVal= 'the boxplot')
+  Hint: Remember that the plot also has whiskers.
+
+- Class: mult_question
+  Output: The term geom as used in in ggplot2 is short for ____________.
+  AnswerChoices: geometric object;geometric element;geographic moment; graphical element object modifer
+  CorrectAnswer: geometric object
+  AnswerTests: omnitest(correctVal= 'geometric object')
+  Hint: Remember that everything in R is a function or an object of some kind.
+
+- Class: mult_question
+  Output: A kind of line graph that shows the distribution of a dataset is called a _____________.
+  AnswerChoices: frequency polygon; histogram; scatterplot; boxplot
+  CorrectAnswer: frequency polygon
+  AnswerTests: omnitest(correctVal= 'frequency polygon')
+  Hint: Remember polygons are made by connecting straight line segments.
